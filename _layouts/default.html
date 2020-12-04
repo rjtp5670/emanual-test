@@ -51,6 +51,16 @@
       }
     </script>
 
+
+<!-- Modal Popup -->
+<script>
+  // When the user clicks on div, open the popup
+  function myFunction() {
+    var popup2 = document.getElementById("myPopup");
+    popup2.classList.toggle("show");
+  }
+</script>
+
     <script>
     $(document).ready(function() {
 
@@ -81,6 +91,29 @@
         //  console.log("Who Am I [1]? :"+ myVar[1]); //Result > Who Am I ? :" 대괄호도 배열 인덱스의 값으로 보는듯.. 
 
       });
+         
+      // 
+      // $('.open-popup-link').magnificPopup({
+      //   type:'inline',
+      //   midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+      // });
+      // 
+      $('.popup2').magnificPopup({
+        type:'inline',
+        midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        callbacks: {
+
+            open: function() {
+              $('.popup').magnificPopup({
+                    type: 'ajax',
+                    alignTop: true,
+                    overflowY: 'scroll',
+  
+                  })
+            },
+          }
+      });      
+      
       $('.popup').magnificPopup({
 
         // New issue (20201124): Returning to the previous position need to be improved.

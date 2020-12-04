@@ -3,15 +3,15 @@ layout: archive
 lang: en
 ref: xl430-w250
 tab_ref:
-    ref1:
-        model: xl430-w250
-        product_group: dxl_xl430
-    ref2:
-        model: xc430-w150
-        product_group: dxl_x430
-    ref3:
-        model: xh430-w210
-        product_group: dxl_x430
+  ref1:
+    model: xl430-w250
+    product_group: dxl_xl430
+  ref2:
+    model: xc430-w150
+    product_group: dxl_x430
+  ref3:
+    model: xh430-w210
+    product_group: dxl_x430
 read_time: true
 share: true
 author_profile: false
@@ -26,39 +26,55 @@ nav: "xl430-w250-test"
 product_group: dxl_xl430
 ---
 
-<!--
-Front Matter을 참조하여, 페이지가 데이터 (Specification 및 Control Table)를 생성하는데, 현재 탭에서, Front Matter이 고정되어, 데이터가 유동적으로 변하지않는 문제점이 발생
-
-1. Front Matter을 바꿀수있는지? > 바뀐다고 하더라도, Page Load 없이 내용이 변경이 될지?
-
-2. 각 Section Element 마다, ref 및 product_group 항목을 새로 정의후 각 include 파일에 전달이 가능할지?
-
-3. 페이지를 링크로 이동하기 > 즉 하나의 서브 Navigation이 더 생기는거임. 사실 제일 간단;;
--->
-
 {::options parse_block_html="true" /}
 
-<script>
-// When the user clicks on div, open the popup
-function myFunction() {
-  var popup2 = document.getElementById("myPopup");
-  popup2.classList.toggle("show");
-}
-</script>
+<!-- 
 
-<!-- <a class="popup" href="">open popup</a> -->
+{% capture Goal_Position %}
 
 <div class="popup2" onclick="myFunction()">Goal Position
-  <div class="popuptext" id="myPopup"> {% include en/dxl/control_table_goal_position_2.md passed_ref = page.tab_ref.ref3.product_group %}
-  </div>
+<div class="popuptext" id="myPopup"> {% include en/dxl/control_table_goal_position_2.md passed_ref = page.tab_ref.ref3.product_group %}</div>
 </div>
+{% endcapture %} 
+-->
+
+<!-- 테스트  시작 -->
+
+<div id="test-popup" class="white-popup mfp-hide">
+  {% include en/dxl/control_table_goal_position_2.md passed_ref = page.tab_ref.ref3.product_group %}
+</div>
+
+<div id="protocol-type" class="white-popup mfp-hide">
+  {% include en/dxl/control_table_protocolversion.md passed_ref = page.tab_ref.ref3.product_group %}
+</div>
+
+
+[Show inline popup](#test-popup){: .popup2}
+
+[Protocol Type](#protocol-type){: .popup2}
+
+
+<!-- Or like so: -->
+
+
+<!-- 
+
+{% assign goal_pos = Goal_Position %}
+
+{{ goal_pos }}
+
+{% capture Temp_Table %}
+| Address | Size<br>(Byte) | Data Name      | Access | Default<br />Value | Range | Unit |
+|:-------:|:--------------:|:---------------|:------:|:------------------:|:-----:|:----:|
+|    0    |       2        | {{ goal_pos }} |   R    |       1,010        |   -   |  -   |
+{% endcapture %}
+
+ -->
 
 
 <!-- {% include en/dxl/control_table_return_delay_time.md %} -->
 
 <!-- {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %} -->
-
-{{ pages.title }}
 
 <!--
 
@@ -74,29 +90,7 @@ function myFunction() {
 
 -->
 
-{% for ref in page.tab_ref %}
-{% assign name = ref[0] %} <!-- e.g. ref1 -->
-{% assign value = ref[1] %}  <!-- e.g. xl430-w250 -->
-
-{% endfor %}
-<!--
-{{ page.tab_ref.ref1.model }}
-{{ page.tab_ref.ref1.product_group }}
-
-{{ page.tab_ref.ref2.model }}
-{{ page.tab_ref.ref2.product_group }}
-
-
-{{ page.tab_ref.ref3.model }}
-{{ page.tab_ref.ref3.product_group }}
-
-
-{{ page.tab_ref.ref2 }}
-
-{{ page.tab_ref.ref3 }} -->
-
-
-<!-- {% include en/dxl/control_table_return_delay_time.md passed_model = page.tab_ref.ref2.ref2_product_group %}{: .popup} -->
+<!-- 테스트 끝  -->
 
 <section id="{{ page.tab_title1 }}" class="tab_contents">
 
