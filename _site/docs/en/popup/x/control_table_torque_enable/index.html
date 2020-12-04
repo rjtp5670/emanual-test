@@ -1,0 +1,29 @@
+
+<div id=popup class="popup_window">
+  <h1 id="torque-enable">Torque Enable</h1>
+
+<p>Torque Enable(64) determines Torque ON/OFF. Writing ‘1’ to Toque Enable’s address will turn on the Torque and all Data in the EEPROM area will be locked.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0(Default)</td>
+      <td style="text-align: left">Turn off the torque</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: left">Turn on the torque and lock EEPROM area</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice"><strong>NOTE</strong> : <a href="/docs/en/popup/x/control_table_present_position" class="popup">Present Position(132)</a> can be reset when <a href="/docs/en/popup/x/control_table_mx_opmode_2" class="popup">Operating Mode(11)</a> and Torque Enable(64) are updated. For more details, please refer to the <a href="/docs/en/popup/x/control_table_homingoffset" class="popup">Homing Offset(20)</a> and Present Position(132)</p>
+
+
+</div>

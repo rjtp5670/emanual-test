@@ -1,0 +1,20 @@
+
+<div id=popup class="popup_window">
+  <h1 id="present-position">Present Position</h1>
+
+<p>The Present Position(132) indicates present Position. For more details, see the [Goal Position(116)].</p>
+
+<div class="notice">
+<p><strong>NOTE</strong> :  <a href="#present-position">Present Position(132)</a>  represents 4 byte continuous range from -2,147,483,648 to 2,147,483,647 when Torque is turned off regardless of Operating Mode(11).<br />
+However,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within one full rotation in following cases:</p>
+<ol>
+  <li>When Operating Mode(11) switches to <strong>Position Control Mode</strong>,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within a full rotation.</li>
+  <li>When torque is turned on in <strong>Position Control Mode</strong>,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within one full rotation.</li>
+  <li>Turning on the power supply or using <a href="/docs/en/dxl/protocol2/#reboot">Reboot Instruction</a>.</li>
+</ol>
+
+<p>Notice that  <a href="#present-position">Present Position(132)</a>  value can be affected by  <a href="#homing-offset">Homing Offset(20)</a> .</p>
+</div>
+
+
+</div>

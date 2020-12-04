@@ -1,0 +1,60 @@
+
+<div id=popup class="popup_window">
+  <h1 id="profile-velocity">Profile Velocity</h1>
+
+<p>When the <a href="/docs/en/popup/x/control_table_drivemode" class="popup">Drive Mode(10)</a> is <strong>Velocity-based Profile</strong>, Profile Velocity(112) sets the maximum velocity of the Profile.<br />
+When the Drive Mode(10) is <strong>Time-based Profile</strong>, Profile Velocity(112) sets the time span for the Profile.<br />
+Be aware that the Profile Velocity(112) is to be only applied to <strong>Position Control Mode</strong> or <strong>Extended Position Control Mode</strong> on the [Operating Mode(11)].</p>
+
+<p>For more detailed information, see <a href="#what-is-the-profile">What is the Profile</a>.</p>
+
+<p class="notice"><strong>NOTE</strong>: Velocity Control Mode only uses [Profile Acceleration(108)] without the Profile Velocity(112).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Velocity-based Profile</th>
+      <th style="text-align: center">Values</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Unit</td>
+      <td style="text-align: center">0.229 [rev/min]</td>
+      <td style="text-align: left">Sets velocity of the Profile</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Range</td>
+      <td style="text-align: center">0 ~ 32767</td>
+      <td style="text-align: left">‘0’ stands for an infinite velocity</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Time-based Profile</th>
+      <th style="text-align: center">Values</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Unit</td>
+      <td style="text-align: center">1 [msec]</td>
+      <td style="text-align: left">Sets the time span for the Profile</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Range</td>
+      <td style="text-align: center">0 ~ 32737</td>
+      <td style="text-align: left">‘0’ stands for an infinite velocity.<br />[Profile Acceleration(108)] will not exceed 50% of Profile Velocity(112) value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice"><strong>NOTE</strong> : Time-based Profile is available from the firmware V42.</p>
+
+
+</div>

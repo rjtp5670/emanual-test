@@ -1,0 +1,66 @@
+
+<div id=popup class="popup_window">
+  <h1 id="drive-mode">Drive Mode</h1>
+
+<p>The Drive Mode(10) configures Drive Mode of DYNAMIXEL.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Bit</th>
+      <th style="text-align: center">Item</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Bit 7(0x80)</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">Unused, always ‘0’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bit 6(0x40)</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">Unused, always ‘0’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bit 5(0x20)</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">Unused, always ‘0’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bit 4(0x10)</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">Unused, always ‘0’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bit 3(0x08)</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">Unused, always ‘0’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bit 2(0x04)</td>
+      <td style="text-align: center">Profile Configuration</td>
+      <td style="text-align: left"><strong>[0]</strong> Velocity-based Profile:  Create a Profile based on Velocity<br /><strong>[1]</strong> Time-based Profile: Create Profile based on time <br />※ See <a href="#what-is-the-profile">What is the Profile</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bit 1(0x02)</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">Unused, always ‘0’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bit 0(0x01)</td>
+      <td style="text-align: center">Normal/Reverse Mode</td>
+      <td style="text-align: left"><strong>[0]</strong> Normal Mode: CCW(Positive), CW(Negative)<br /><strong>[1]</strong> Reverse Mode: CCW(Negative), CW(Positive)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="notice">
+<p><strong>NOTE</strong> : If the value of Bit 0(Normal/Reverse Mode) of the Drive Mode(10) is set to <code>1</code>, rotational direction is inverted.<br />
+Thus, <strong>Goal Position</strong>, <strong>Present Position</strong> will have a inverted direction.<br />
+This feature can be very useful when configuring symmetrical joint or wheel system.</p>
+</div>
+
+
+</div>

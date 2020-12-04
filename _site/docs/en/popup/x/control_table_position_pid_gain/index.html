@@ -1,0 +1,79 @@
+
+<div id=popup class="popup_window">
+  <h1 id="position-pid-gain-feedforward-1st2nd-gains">Position PID Gain, Feedforward 1st/2nd Gains</h1>
+
+<p>These Gains are used in Position Control Mode and Extended Position Control Mode. Gains of DYNAMIXEL’s internal controller can be calculated from Gains of the Control Table as shown below. The constant in each equations includes sampling time. Position P Gain of DYNAMIXEL’s internal controller is abbreviated to K<sub>P</sub>P and that of the Control Table is abbreviated to K<sub>P</sub>P<sub>(TBL)</sub>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Controller Gain</th>
+      <th style="text-align: center">Conversion Equations</th>
+      <th style="text-align: center">Range</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Position D Gain(80)</td>
+      <td style="text-align: center">K<sub>P</sub>D</td>
+      <td style="text-align: center">K<sub>P</sub>D = K<sub>P</sub>D<sub>(TBL)</sub> / 16</td>
+      <td style="text-align: center">0 ~ 16,383</td>
+      <td>D Gain</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Position I Gain(82)</td>
+      <td style="text-align: center">K<sub>P</sub>I</td>
+      <td style="text-align: center">K<sub>P</sub>I = K<sub>P</sub>I<sub>(TBL)</sub> / 65,536</td>
+      <td style="text-align: center">0 ~ 16,383</td>
+      <td>I Gain</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Position P Gain(84)</td>
+      <td style="text-align: center">K<sub>P</sub>P</td>
+      <td style="text-align: center">K<sub>P</sub>P = K<sub>P</sub>P<sub>(TBL)</sub> / 128</td>
+      <td style="text-align: center">0 ~ 16,383</td>
+      <td>P Gain</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Feedforward 2nd Gain(88)</td>
+      <td style="text-align: center">K<sub>FF2nd</sub></td>
+      <td style="text-align: center">K<sub>FF2nd(TBL)</sub> / 4</td>
+      <td style="text-align: center">0 ~ 16,383</td>
+      <td>Feedforward Acceleration Gain</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Feedforward 1st Gain(90)</td>
+      <td style="text-align: center">K<sub>FF1st</sub></td>
+      <td style="text-align: center">K<sub>FF1st(TBL)</sub> / 4</td>
+      <td style="text-align: center">0 ~ 16,383</td>
+      <td>Feedforward Velocity Gain</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Below figure is a block diagram describing the position controller in Position Control Mode and Extended Position Control Mode. When the instruction from the user is received by DYNAMIXEL, it takes following steps until driving the horn.</p>
+<ol>
+  <li>An Instruction from the user is transmitted via DYNAMIXEL bus, then registered to [Goal Position(116)].</li>
+  <li>[Goal Position(116)] is converted to desired position trajectory and desired velocity trajectory by [Profile Velocity(112)] and [Profile Acceleration(108)].</li>
+  <li>The desired position trajectory and desired velocity trajectory is stored at [Position Trajectory(140)] and [Velocity Trajectory(136)] respectively.</li>
+  <li>Feedforward and PID controller calculate PWM output for the motor based on desired trajectories.</li>
+  <li>[Goal PWM(100)] sets a limit on the calculated PWM output and decides the final PWM value.</li>
+  <li>The final PWM value is applied to the motor through an Inverter, and the horn of DYNAMIXEL is driven.</li>
+  <li>Results are stored at [Present Position(132)], [Present Velocity(128)], [Present PWM(124)] and [Present Current(126)].</li>
+</ol>
+
+<p><img src="/assets/images/dxl/position_controller_pid_gain.jpg" alt="" /></p>
+
+<div class="notice">
+<p><strong>NOTE:</strong></p>
+<ul>
+  <li>In case of PWM Control Mode, both PID controller and Feedforward controller are deactivated while <a href="#goal-pwm100">Goal PWM(100)</a> value is directly controlling the motor through an inverter. In this manner, users can directly control the supplying voltage to the motor.</li>
+  <li>K<sub>a</sub> is an Anti-windup Gain that cannot be modified by users.<br />
+For more details about the PID controller and Feedforward controller, please refer to the <a href="http://en.wikipedia.org/wiki/PID_controller">PID Controller</a> and <a href="https://en.wikipedia.org/wiki/Feed_forward_(control)">Feed Forward</a>.</li>
+</ul>
+</div>
+
+
+</div>

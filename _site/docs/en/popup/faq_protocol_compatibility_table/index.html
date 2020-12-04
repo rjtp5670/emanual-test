@@ -1,0 +1,539 @@
+
+<div id=popup class="popup_window">
+  <h1 id="robotis-protocol-compatibility-table">ROBOTIS Protocol Compatibility Table</h1>
+
+<ul>
+  <li><a href="/docs/en/dxl/protocol1/">Protocol 1.0</a></li>
+  <li><a href="/docs/en/dxl/protocol2/">Protocol 2.0</a></li>
+</ul>
+
+<p class="notice">Compatibility Key: O= Yes ; X= No ; * = User Action Required</p>
+
+<h1 id="dynamixel-"><a href="#dynamixel-">DYNAMIXEL </a></h1>
+
+<h2 id="ax-series">AX Series</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">AX-12W</td>
+      <td style="text-align: left">O</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">AX-12A</td>
+      <td style="text-align: left">O</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">AX-18A</td>
+      <td style="text-align: left">O</td>
+      <td style="text-align: left">X</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="mx-series">MX Series</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">MX-12W</td>
+      <td style="text-align: left">O</td>
+      <td style="text-align: left">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MX-28</td>
+      <td style="text-align: left">O</td>
+      <td style="text-align: left">O*</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MX-64</td>
+      <td style="text-align: left">O</td>
+      <td style="text-align: left">O*</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MX-106</td>
+      <td style="text-align: left">O</td>
+      <td style="text-align: left">O*</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="notice">
+<p><strong>NOTE</strong>: Read the following to ensure proper use.</p>
+<ul>
+  <li>In order to use Protocol 2.0 firmware version with MX series, proceed to <strong>Firmware Recovery</strong> via <a href="/docs/en/software/dynamixel/dynamixel_wizard2/#firmware-recovery">DYNAMIXEL Wizard 2.0</a> or <a href="/docs/en/software/rplus2/manager/#firmware-recovery">R+ Manager 2.0</a>.</li>
+  <li>Protocol 2.0 is available with v39 Firmware version (or above). Proceed to <strong>Firmware Update</strong> via <a href="/docs/kr/software/dynamixel/dynamixel_wizard2/#firmware-update">DYNAMIXEL Wizard 2.0</a> or <a href="/docs/en/software/rplus2/manager/#firmware-recovery">R+ Manager 2.0</a>.</li>
+  <li>Protocol 2.0 supports various Operating Modes, Secondary ID, Drive Mode, Bus Watchdog and etc.</li>
+</ul>
+</div>
+
+<div class="notice--info">
+<p><strong>INFO</strong> :</p>
+<ul>
+  <li>MX(2.0) Firmware is different from MX series control table and address.</li>
+  <li>MX(2.0) Firmware inherits DYNAMIXEL-X function.</li>
+</ul>
+</div>
+
+<h1 id="dynamixel-x">DYNAMIXEL X</h1>
+
+<div class="notice">
+<p><strong>NOTE</strong> :</p>
+<ul>
+  <li>X-series can switch Protocol 2.0 into Protocol 1.0 aside from <a href="/docs/en/dxl/x/xl320/">XL320</a></li>
+  <li>Refer to Protocol Type(13) in control table of model of its DYNAMIXEL.</li>
+</ul>
+</div>
+
+<h2 id="xh-series"><a href="#xh-series">XH Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">XH430-W210</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XH430-W350</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XH430-V210</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XH430-V350</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XH540-W150</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XH540-W270</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XH540-V150</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XH540-V270</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="xm-series"><a href="#xm-series">XM Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">XM430-W210</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XM430-W350</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XM540-W150</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XM540-W270</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="xc-series"><a href="#xc-series">XC Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">XC430-W150</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XC430-W240</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2XC430-W250</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="xl-series"><a href="#xl-series">XL Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">XL-320</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XL-330</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">XL430-W250</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2XL430-W250</td>
+      <td style="text-align: left">O* <br />(F/W address 13)</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="dynmaixel-pro"><a href="#dynamixel-pro">DYNMAIXEL PRO</a></h1>
+
+<h2 id="h-series"><a href="#h-series">H Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">H42-20-S300</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">H54-100-S500</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">H54-200-S500</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="m-series"><a href="#m-series">M Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">M42-10-S260</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">M54-40-S250</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">M54-60-S250</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="l-series"><a href="#l-series">L Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">L54-50-S500-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">L54-50-S290-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">L54-30-S500-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">L54-30-S400-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">L42-10-S300-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="dynamixel-p"><a href="#dynamixel-p">DYNAMIXEL-P</a></h1>
+
+<h2 id="ph-series"><a href="#ph-series">PH Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">PH54-200-S500-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PH54-100-S500-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PH42-020-S300-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pm-series"><a href="#pm-series">PM Series</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: left">Protocol 1.0</th>
+      <th style="text-align: left">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">PM54-060-S250-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PM54-040-S250-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PM42-010-S260-R</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="etc"><a href="#etc">ETC</a></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: center">Protocol 1.0</th>
+      <th style="text-align: center">Protocol 2.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">RoboPlus 1.0 Suite</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">X* (XL-320 and PRO only)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">R+ Manager 2.0</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">R+ Task 2.0</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">R+ Motion 2.0</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">R+ Design</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DYNAMIXEL Wizard 2.0</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ROBOTIS OP2</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O* <br />(Requires F/W Upgrade)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ROBOTIS OP3</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ROBOTIS STEM</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BIOLOID Premium</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TurtleBot3 Burger</td>
+      <td style="text-align: center">O*<br />(F/W address 13)</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TurtleBot3 WafflePi</td>
+      <td style="text-align: center">O*<br />(F/W address 13)</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">RH-P12-RN</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Manipulator-H</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">THORMANG3</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OpenManipulator-X</td>
+      <td style="text-align: center">O*<br />(F/W address 13)</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CM-530</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CM-550</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CM-700</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OpenCM9.04</td>
+      <td style="text-align: center">O*<br />(Library-dependent)</td>
+      <td style="text-align: center">O*<br />(Library-dependent)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OpenCM485 EXP</td>
+      <td style="text-align: center">O <br />(Controller-dependent)</td>
+      <td style="text-align: center">O<br />(Controller-dependent)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OpenCR1.0</td>
+      <td style="text-align: center">O*<br />(Library-dependent)</td>
+      <td style="text-align: center">O*<br />(Library-dependent)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

@@ -1,0 +1,30 @@
+
+<div id=popup class="popup_window">
+  <h1 id="moving122">Moving(122)</h1>
+
+<p>The Moving(122) indicates whether DYNAMIXEL is in motion or not.<br />
+If absolute value of <a href="#present_velocity128">Present Velocity(128)</a> is greater than <a href="#moving-threshold24">Moving Threshold(24)</a>, Moving(122) is set to ‘1’.<br />
+Otherwise, it will be cleared to ‘0’.<br />
+However,the Moving(122) will always be set to ‘1’ regardless of <a href="#present_velocity128">Present Velocity(128)</a> while Profile is in progress with <a href="#goal-position116">Goal Position(116)</a> instruction.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Value</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">Movement is not detected</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">Movement is detected, or Profile is in progress(Goal Position(116) instruction is being processed)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

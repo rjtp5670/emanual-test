@@ -1,0 +1,32 @@
+
+<div id=popup class="popup_window">
+  <h1 id="goal-velocity">Goal Velocity</h1>
+
+<p>Use the Goal Velocity(104) to set a desired velocity when the [Operating Mode(11)] is <strong>Velocity Control Mode</strong>.</p>
+
+<p>Be aware that the Goal Velocity(104) is not to limit moving velocity.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Unit</th>
+      <th style="text-align: center">Value Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0.229 rpm</td>
+      <td style="text-align: center">-[Velocity Limit(44)] ~ [Velocity Limit(44)]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice"><strong>NOTE</strong>: This value cannot exceed [Velocity Limit(44)].</p>
+
+<p class="notice"><strong>NOTE</strong> : The maximum velocity and maximum torque of DYNAMIXEL is affected by supplying voltage.<br />
+Therefore, if supplying voltage changes, so does the maximum velocity. This manual complies with recommended supply voltage(12[V]).</p>
+
+<p class="notice"><strong>NOTE</strong> : If [Profile Acceleration(108)] and Goal Velocity(104) are modified simultaneously, modified [Profile Acceleration(108)] will be used to process Goal Velocity(104).</p>
+
+
+</div>

@@ -1,0 +1,39 @@
+
+<div id=popup class="popup_window">
+  <h1 id="status-return-level">Status Return Level</h1>
+
+<p>The Status Return Level(68) decides how to return Status Packet when DYNAMIXEL receives an Instruction Packet.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Responding Instructions</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">PING Instruction</td>
+      <td style="text-align: center">Returns PING Instuction only</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">PING Instruction<br />READ Instruction</td>
+      <td style="text-align: center">Returns PING and READ Instuctions only</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">All Instructions</td>
+      <td style="text-align: center">Returns all Instructions</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice"><strong>NOTE</strong> : If the Instruction Packet ID is set to the Broadcast ID(0xFE), Status Packet will not be returned for READ and WRITE Instructions regardless of Status Return Level. For more details, please refer to the <code>Status Packet</code> section for <a href="/docs/en/dxl/protocol1/#status-packet">Protocol 1.0</a> or <a href="/docs/en/dxl/protocol2/#status-packet">Protocol 2.0</a>.</p>
+
+<p><code>1</code> Packet ID is the field that indicates an ID of the device that should receive the Instruction Packet and process it.</p>
+
+
+</div>
