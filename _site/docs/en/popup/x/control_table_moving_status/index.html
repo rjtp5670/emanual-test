@@ -2,10 +2,15 @@
 <div id=popup class="popup_window">
   <h1 id="moving-status">Moving Status</h1>
 
-<p>The Moving Status(123), one byte data, provides additional information about the movement.<br />
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
+<p>The Moving Status(123), one byte data, provides additional information about the movement.
 Following Error(0x08) and In-Position(0x01) are available under <strong>Position Control Mode</strong>, <strong>Extended Position Control Mode</strong>, <strong>Current-based Position Control Mode</strong>.</p>
 
-<p>For more details about the mode, see the [Operating Mode(11)].</p>
+<p>For more details about the mode, see the <a href="#operating-mode-" class="popup2">Operating Mode(11)</a>.</p>
 
 <table>
   <thead>
@@ -33,7 +38,7 @@ Following Error(0x08) and In-Position(0x01) are available under <strong>Position
       <td style="text-align: center">Bit 4<br />Bit 5</td>
       <td style="text-align: center">11<br />10<br />01<br />00</td>
       <td style="text-align: center">Velocity Profile</td>
-      <td style="text-align: left">11 : <a href="#profile-velocity112">Trapezoidal Profile</a><br />10 : <a href="#profile-velocity112">Triangular Profile</a><br />01 : <a href="#profile-velocity112">Rectangular Profile</a><br />00 : Profile not used(Step)</td>
+      <td style="text-align: left">11 : <a href="#profile-velocity-" class="popup2">Trapezoidal Profile</a><br />10 : <a href="#profile-velocity-" class="popup2">Triangular Profile</a><br />01 : <a href="#profile-velocity-" class="popup2">Rectangular Profile</a><br />00 : Profile not used(Step)</td>
     </tr>
     <tr>
       <td style="text-align: center">Bit 3</td>
@@ -51,7 +56,7 @@ Following Error(0x08) and In-Position(0x01) are available under <strong>Position
       <td style="text-align: center">Bit 1</td>
       <td style="text-align: center">0 or 1</td>
       <td style="text-align: center">Profile Ongoing</td>
-      <td style="text-align: left">Profile is in progress with <a href="#goal-position116">Goal Position(116)</a> instruction<br />0 : Not in progress<br />1 : In progress</td>
+      <td style="text-align: left">Profile is in progress with <a href="#goal-position-" class="popup2">Goal Position(116)</a> instruction<br />0 : Not in progress<br />1 : In progress</td>
     </tr>
     <tr>
       <td style="text-align: center">Bit 0</td>
@@ -62,7 +67,7 @@ Following Error(0x08) and In-Position(0x01) are available under <strong>Position
   </tbody>
 </table>
 
-<p class="notice"><strong>NOTE</strong> : The Triangular velocity profile is configured when Rectangular velocity profile cannot reach to the <a href="#profile-verlocity112">Profile Velocity(112)</a>.</p>
+<p class="notice"><strong>NOTE</strong> : The Triangular velocity profile is configured when Rectangular velocity profile cannot reach to the <a href="#profile-velocity-" class="popup2">Profile Velocity(112)</a>.</p>
 
 <p class="notice"><strong>NOTE</strong> : In-Position bit will be set when the positional deviation is smaller than a predefined value under Position related control modes.</p>
 

@@ -1,3 +1,9 @@
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
 
 | Value      | Operating Mode                             | Description                                                                                                                                                                                                                                                                                   |
 |:-----------|:-------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -9,18 +15,18 @@
 | 16         | PWM Control Mode  (Voltage Control Mode)   | This mode directly controls PWM output. (Voltage Control Mode)                                                                                                                                                                                                                                |
 
 {% capture group_notice_01 %}
-**NOTE** : When the Operating Mode(11) switches to another mode, value of Gains, such as [Velocity PI(76, 78)](#velocity-pi-gain76-78); [Position PID(80, 82, 84)](#position-pid-gain80-82-84); [Feedforward(88, 90)](#position-pid-gain80-82-84), will be reset fitting to a selected Operating Mode(11). Beside, the profile generator and the data of determining the limit value will be reset either. See the next description for more details.  
+**NOTE** : When the Operating Mode(11) switches to another mode, value of Gains, such as [Velocity PI(76, 78)](#velocity-pi-gain76-78); [Position PID(80, 82, 84)](#position-pid-gain80-82-84); [Feedforward(88, 90)](#position-pid-gain80-82-84), will be reset fitting to a selected Operating Mode(11). Beside, the profile generator and the data of determining the limit value will be reset either. See the next description for more details.
 
 1. The [Profile Velocity(112)](#profile-velocity112), [Profile Acceleration(108)](#profile-acceleration108) : Reset to ‘0’
 2. The [Goal PWM(100)](#goal-pwm100) and [Goal Current(102)](#goal-current102) are reset to the value of [PWM Limit(36)](#pwm-limit36) and [Current Limit(38)](#current-limit38) respectively
-3. When the Operating Mode(11) is **Current-based Position Control Mode**, [Position PID(80, 82, 84)](#position-pid-gain80-82-84) and [PWM Limit(36)](#pwm-limit36) values will be reset. 
+3. When the Operating Mode(11) is **Current-based Position Control Mode**, [Position PID(80, 82, 84)](#position-pid-gain80-82-84) and [PWM Limit(36)](#pwm-limit36) values will be reset.
 
 Note that the changed value of [Position PID(80, 82, 84)](#position-pid-gain80-82-84) and [PWM Limit(36)](#pwm-limit36) can be read via the Control Table.
 {% endcapture %}
 <div class="notice">{{ group_notice_01 | markdownify }}</div>
 
 {% capture group_notice_02 %}
-**NOTE** : PWM stands for **Pulse Width Modulation** that modulates PWM Duty to control motors. It changes pulse width to control average supply voltage to the motor, and this technique is widely used in the motor control field.  
+**NOTE** : PWM stands for **Pulse Width Modulation** that modulates PWM Duty to control motors. It changes pulse width to control average supply voltage to the motor, and this technique is widely used in the motor control field.
 1. PWM Control Mode is similar to the Wheel Mode of [AX](/docs/en/dxl/ax/ax-12w/#cw-compliance-margin) and [RX](/docs/en/dxl/rx/rx-10/#moving-speed-32) series.
 2. Input [Goal PWM(100)](#goal-pwm) value to control supply voltage for DYNAMIXEL in **PWM Control Mode**.
 {% endcapture %}

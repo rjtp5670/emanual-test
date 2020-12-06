@@ -2,13 +2,18 @@
 <div id=popup class="popup_window">
   <h1 id="profile-velocity">Profile Velocity</h1>
 
-<p>When the <a href="/docs/en/popup/x/control_table_drivemode" class="popup">Drive Mode(10)</a> is <strong>Velocity-based Profile</strong>, Profile Velocity(112) sets the maximum velocity of the Profile.<br />
-When the Drive Mode(10) is <strong>Time-based Profile</strong>, Profile Velocity(112) sets the time span for the Profile.<br />
-Be aware that the Profile Velocity(112) is to be only applied to <strong>Position Control Mode</strong> or <strong>Extended Position Control Mode</strong> on the [Operating Mode(11)].</p>
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
+<p>When the <a href="#drive-mode-" class="popup2">Drive Mode(10)</a> is <strong>Velocity-based Profile</strong>, Profile Velocity(112) sets the maximum velocity of the Profile.
+When the Drive Mode(10) is <strong>Time-based Profile</strong>, Profile Velocity(112) sets the time span for the Profile.
+Be aware that the Profile Velocity(112) is to be only applied to <strong>Position Control Mode</strong> or <strong>Extended Position Control Mode</strong> on the <a href="#operating-mode-" class="popup2">Operating Mode(11)</a>.</p>
 
 <p>For more detailed information, see <a href="#what-is-the-profile">What is the Profile</a>.</p>
 
-<p class="notice"><strong>NOTE</strong>: Velocity Control Mode only uses [Profile Acceleration(108)] without the Profile Velocity(112).</p>
+<p class="notice"><strong>NOTE</strong>: Velocity Control Mode only uses <a href="#profile-acceleration-" class="popup2">Profile Acceleration(108)</a> without the Profile Velocity(112).</p>
 
 <table>
   <thead>
@@ -49,7 +54,7 @@ Be aware that the Profile Velocity(112) is to be only applied to <strong>Positio
     <tr>
       <td style="text-align: center">Range</td>
       <td style="text-align: center">0 ~ 32737</td>
-      <td style="text-align: left">‘0’ stands for an infinite velocity.<br />[Profile Acceleration(108)] will not exceed 50% of Profile Velocity(112) value.</td>
+      <td style="text-align: left">‘0’ stands for an infinite velocity.<br />Profile Acceleration(108) will not exceed 50% of Profile Velocity(112) value.</td>
     </tr>
   </tbody>
 </table>

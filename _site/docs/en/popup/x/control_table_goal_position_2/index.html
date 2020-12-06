@@ -2,6 +2,11 @@
 <div id=popup class="popup_window">
   <h1 id="goal-position">Goal Position</h1>
 
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
 <h1 id="goal-position-1">Goal Position</h1>
 <p>The Goal Position(116) sets desired position.  From the front view of DYNAMIXEL, CCW is an increasing direction, whereas CW is a decreasing direction. The way to reaching the Goal Position(116) differs by 4 Profiles provided by DYNAMIXEL. See the [What is the Profile] for more details.</p>
 
@@ -50,25 +55,30 @@
 </table>
 
 <div class="notice">
-<p><strong>NOTE</strong> : The <a href="#profile-velocity112">Profile Velocity(112)</a> and the <a href="#profile-acceleration108">Profile Acceleration(108)</a> are applied in below cases.</p>
+<p><strong>NOTE</strong> : The <a href="#profile-velocity-" class="popup2">Profile Velocity(112)</a> and the <a href="#profile-acceleration-" class="popup2">Profile Acceleration(108)</a> are applied in below cases.</p>
 <ul>
-  <li>When the <a href="#operating-mode11">Operating Mode(11)</a> is <strong>Position Control Mode</strong>, the <a href="#profile-velocity112">Profile Velocity(112)</a> and the <a href="#profile-acceleration108">Profile Acceleration(108)</a> are used to create a new profile if the <a href="#goal-position116">Goal Position(116)</a> is updated.</li>
-  <li>When the <a href="#operating-mode11">Operating Mode(11)</a> is <strong>Velocity Control Mode</strong>, the <a href="#profile-acceleration108">Profile Acceleration(108)</a> is used to create a new profile if <a href="#goal-velocity104">Goal Velocity(104)</a> is updated.</li>
+  <li>When the <a href="#operating-mode-" class="popup2">Operating Mode(11)</a> is <strong>Position Control Mode</strong>, the Profile Velocity(112) and the Profile Acceleration(108) are used to create a new profile if the Goal Position(116) is updated.</li>
+  <li>When the Operating Mode(11) is <strong>Velocity Control Mode</strong>, the Profile Acceleration(108) is used to create a new profile if <a href="#goal-velocity104">Goal Velocity(104)</a> is updated.</li>
 </ul>
 </div>
 
 <p class="notice"><strong>NOTE</strong> : When turning off the power supply or changing Operation Mode on Extended Position Control Mode, the value of Present Position is reset to the absolute position value of single turn .</p>
 
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
 <div class="notice">
-<p><strong>NOTE</strong> :  <a href="#present-position">Present Position(132)</a>  represents 4 byte continuous range from -2,147,483,648 to 2,147,483,647 when Torque is turned off regardless of Operating Mode(11).<br />
-However,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within one full rotation in following cases:</p>
+<p><strong>NOTE</strong> :  <a href="#present-position-" class="popup2">Present Position(132)</a>  represents 4 byte continuous range from -2,147,483,648 to 2,147,483,647 when Torque is turned off regardless of Operating Mode(11).
+However,  Present Position(132)  will be reset to an absolute position value within one full rotation in following cases:</p>
 <ol>
-  <li>When Operating Mode(11) switches to <strong>Position Control Mode</strong>,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within a full rotation.</li>
-  <li>When torque is turned on in <strong>Position Control Mode</strong>,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within one full rotation.</li>
+  <li>When Operating Mode(11) switches to <strong>Position Control Mode</strong>,  Present Position(132)  will be reset to an absolute position value within a full rotation.</li>
+  <li>When torque is turned on in <strong>Position Control Mode</strong>,  Present Position(132)  will be reset to an absolute position value within one full rotation.</li>
   <li>Turning on the power supply or using <a href="/docs/en/dxl/protocol2/#reboot">Reboot Instruction</a>.</li>
 </ol>
 
-<p>Notice that  <a href="#present-position">Present Position(132)</a>  value can be affected by  <a href="#homing-offset">Homing Offset(20)</a> .</p>
+<p>Notice that  Present Position(132)  value can be affected by  <a href="#homing-offset-" class="popup2">Homing Offset(20)</a> .</p>
 </div>
 
 

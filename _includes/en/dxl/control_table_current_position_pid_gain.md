@@ -1,3 +1,9 @@
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
 Below figure is a block diagram describing the current-based position controller in Current-based Position Control Mode. As Current-based Position Control Mode is quite similar to Position Control Mode, differences will be focused in the following steps. The differences are highlighted with a green marker in the block diagram as well.
 1. Feedforward and PID controller calculates desired current based on desired trajectory.
 2. [Goal Current(102)] decides the final desired current by setting a limit on the calculated desired current.
@@ -8,5 +14,5 @@ Below figure is a block diagram describing the current-based position controller
 
 ![](/assets/images/dxl/current_position_controller_pid_gain.jpg)
 
-**NOTE** : K<sub>a</sub> is an Anti-windup Gain that cannot be modified by users.  
+**NOTE** : K<sub>a</sub> is an Anti-windup Gain that cannot be modified by users.
 {: .notice}

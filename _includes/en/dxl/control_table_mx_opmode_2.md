@@ -1,3 +1,9 @@
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
 |   Value    |                  Operating Mode                  | Description                                                                                                                                                                                                                                            |
 | :--------: | :----------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     1      |  Velocity Control Mode<br />(0&deg; ~ 360&deg;)  | This mode controls velocity and ideal for wheel operation.<br />This mode is identical to the Wheel Mode(endless) from existing DYNAMIXEL.                                                                                                             |
@@ -8,17 +14,17 @@
 {% capture opmode_notice_01 %}
 **NOTE** : Switching Operating Mode will reset gains(PID, Feedfoward) properly to the selected Operating Mode. The profile generator and limits will also be reset.
 
-1. [Profile Velocity(112)](/docs/en/popup/x/control_table_profile_velocity){: .popup}, [Profile Acceleration(108)]{: .popup} : Reset to ‘0’
-2. [Goal PWM(100)]{: .popup} : Reset to [PWM Limit(36)]{: .popup}
+1. [Profile Velocity(112)](#profile-velocity-{{passed_model}}){: .popup2}, [Profile Acceleration(108)](#profile-acceleration-{{passed_model}}){: .popup2} : Reset to ‘0’
+2. [Goal PWM(100)](#goal-pwm-{{passed_model}}){: .popup2} : Reset to [PWM Limit(36)](#pwm-limit-{{passed_model}}){: .popup2}
 {% endcapture %}
 <div class="notice">{{ opmode_notice_01 | markdownify }}</div>
 
 {% capture group_notice_02 %}
-**NOTE** : PWM is the abbreviation for Pulse Width Modulation that modulates PWM Duty to control motors.  
+**NOTE** : PWM is the abbreviation for Pulse Width Modulation that modulates PWM Duty to control motors.
 It changes pulse width to control average supply voltage to the motor and this technique is widely used in the motor control field.
 
 1. PWM Control Mode is similar to the Wheel Mode of DYNAMIXEL [AX](/docs/en/dxl/ax/ax-12w/#cw-compliance-margin) and [RX](/docs/en/dxl/rx/rx-10/#moving-speed-32) series.
-2. Use [Goal PWM(100)](#goal-pwm100) on PWM Control Mode in order to control supply voltage for DYNAMIXEL.  
+2. Use [Goal PWM(100)](#goal-pwm-{{passed_model}}){: .popup2} on PWM Control Mode in order to control supply voltage for DYNAMIXEL.
 {% endcapture %}
 <div class="notice">{{ group_notice_02 | markdownify }}</div>
 

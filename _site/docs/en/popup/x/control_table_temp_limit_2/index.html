@@ -2,9 +2,14 @@
 <div id=popup class="popup_window">
   <h1 id="temperature-limit">Temperature Limit</h1>
 
-<p>The Temperature Limit(31) limits operating temperature of the DYNAMIXEL.<br />
-When the <a href="#present-temperature146">Present Temperature(146)</a> is greater than the Temperature Limit(31), the <strong>Over Heating Error Bit(0x04)</strong> and <strong>Hardware Error Bit(0x80)</strong> in the <a href="hardware-error-status70">Hardware Error Status(70)</a> will be set. If Overheating Error Bit(0x04) is configured in the [Shutdown(63)], [Torque Enable(64)] is cleared to ‘0’ and DYNAMIXEL’s torque will be disabled.<br />
-See the [Shutdown(63)] for more detailed information.</p>
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
+<p>The Temperature Limit(31) limits operating temperature of the DYNAMIXEL.
+When the <a href="#present-temperature-" class="popup2">Present Temperature(146)</a> is greater than the Temperature Limit(31), the <strong>Over Heating Error Bit(0x04)</strong> and <strong>Hardware Error Bit(0x80)</strong> in the <a href="#hardware-error-status-" class="popup2">Hardware Error Status(70)</a> will be set. If Overheating Error Bit(0x04) is configured in the <a href="#shutdown-" class="popup2">Shutdown(63)</a>, <a href="#torque-enable-" class="popup2">Torque Enable(64)</a> is cleared to ‘0’ and DYNAMIXEL’s torque will be disabled.
+See the Shutdown(63) for more detailed information.</p>
 
 <table>
   <thead>

@@ -1,5 +1,11 @@
-The Moving Threshold(24) determines whether the DYNAMIXEL is in motion or not.  
-When the absolute value of [Present Velocity(128)] is greater than the Moving Threshold(24), [Moving(122)] is set to ‘1’. Otherwise it is cleared to ‘0’.
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
+The Moving Threshold(24) determines whether the DYNAMIXEL is in motion or not.
+When the absolute value of [Present Velocity(128)](#present-velocity-{{ passed_model }}){: .popup2} is greater than the Moving Threshold(24), [Moving(122)](#moving-{{ passed_model }}){: .popup2} is set to ‘1’. Otherwise it is cleared to ‘0’.
 
 |       |     Values      |                 Description                  |
 |:-----:|:---------------:|:--------------------------------------------:|

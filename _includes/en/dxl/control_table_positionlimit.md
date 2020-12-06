@@ -1,6 +1,12 @@
-The Min and Max Position Limit(48, 52) limit maximum and minimum desired positions for Position Control Mode(Joint Mode) within the range of 1 rotation(0 ~ 4,095).  
-Therefore, [Goal Position(116)] should be configured within the position limit range.  
-These values are not used in Extended Position Control Mode{% if page.product_group!='dxl_xl430' %} and Current-based Position Control Mode{% else %}{% endif %}.
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
+The Min and Max Position Limit(48, 52) limit maximum and minimum desired positions for Position Control Mode(Joint Mode) within the range of 1 rotation(0 ~ 4,095).
+Therefore, [Goal Position(116)](#goal-position-{{ passed_model }}){: .popup2} should be configured within the position limit range.
+These values are not used in Extended Position Control Mode{% if passed_product_group!='dxl_xl430' %} and Current-based Position Control Mode{% else %}{% endif %}.
 
 |     Unit      |      Value Range      |
 |:-------------:|:---------------------:|

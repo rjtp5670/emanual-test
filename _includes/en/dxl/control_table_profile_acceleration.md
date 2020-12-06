@@ -1,7 +1,13 @@
- When the [Drive Mode(10)] is **Velocity-based Profile**, Profile Acceleration(108) sets acceleration of the Profile.  
- When the [Drive Mode(10)] is **Time-based Profile**, Profile Acceleration(108) sets accelerating time of the Profile.  
- Be aware that the Profile Acceleration(108) is to be applied in all control mode except **Current Control Mode** or **PWM Control Mode** on the [Operating Mode(11)].  
- 
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
+ When the [Drive Mode(10)](#drive-mode-{{ passed_model }}){: .popup2} is **Velocity-based Profile**, Profile Acceleration(108) sets acceleration of the Profile.
+ When the Drive Mode(10) is **Time-based Profile**, Profile Acceleration(108) sets accelerating time of the Profile.
+ Be aware that the Profile Acceleration(108) is to be applied in all control mode except **Current Control Mode** or **PWM Control Mode** on the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2}.
+
  For more detailed information, see [What is the Profile](#what-is-the-profile.
 
 | Velocity-based Profile |            Values             | Description                             |
@@ -14,7 +20,7 @@
 |        Unit        | 1 [msec]  | Sets accelerating time of the Profile                                                                                                      |
 |       Range        | 0 ~ 32737 | '0' stands for an infinite accelerating time('0 [msec]').<br>Profile Acceleration(108) will not exceed 50% of Profile Velocity(112) value. |
 
-{% if page.product_group=='xl330' %}
+{% if passed_product_group=='xl330' %}
 
 {% else %}
 

@@ -2,8 +2,13 @@
 <div id=popup class="popup_window">
   <h1 id="secondary-id">Secondary ID</h1>
 
-<p>The Secondary(Shadow) ID(12) assigns a secondary ID to the DYNAMIXEL.<br />
-The Secondary ID(12) can be shared to group between DYNAMIXELs and to synchronize their movement, unlike [ID(7)] which should not be overlapped. 
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
+<p>The Secondary(Shadow) ID(12) assigns a secondary ID to the DYNAMIXEL.
+The Secondary ID(12) can be shared to group between DYNAMIXELs and to synchronize their movement, unlike <a href="#id-" class="popup2">ID(7)</a> which should not be overlapped.
 Be aware of differences between the Secondary ID(12) and ID(7) by reading the following.</p>
 <ul>
   <li>Under the same Secondary ID(12), multiple DYNAMIXELs can be grouped.</li>
@@ -39,12 +44,12 @@ Be aware of differences between the Secondary ID(12) and ID(7) by reading the fo
 
 <ol>
   <li>Set Secondary ID of all DYNAMIXELs to ‘5’.</li>
-  <li>Send Write Instruction Packet([ID(7)] = 1, [LED(65)] = 1).</li>
+  <li>Send Write Instruction Packet(<a href="#id-" class="popup2">ID(7)</a> = 1, <a href="#led-" class="popup2">LED(65)</a> = 1).</li>
   <li>The DYNAMIXEL with ID ‘1’ turns on its LED by the Instruction Packet, and Status Packet will be returned.</li>
-  <li>Send Write Instruction Packet([ID(7)] = 5, [LED(65)] = 1).</li>
+  <li>Send Write Instruction Packet(<a href="#id-" class="popup2">ID(7)</a> = 5, <a href="#led-" class="popup2">LED(65)</a> = 1).</li>
   <li>All DYNAMIXELs turns on their LED, but Status Packet of ID ‘5’ will be returned only.</li>
   <li>Set the Secondary ID of all DYNAMIXELs to ‘100’.</li>
-  <li>Send Write Instruction Packet([ID(7)] = 100, [LED(65)] = 0).</li>
+  <li>Send Write Instruction Packet(<a href="#id-" class="popup2">ID(7)</a> = 100, <a href="#led-" class="popup2">LED(65)</a> = 0).</li>
   <li>All DYNAMIXELs turns off their LED. As no DYNAMIXEL uses ID 100, but uses the same Secondary ID, the Status Packet will not be returned.</li>
 </ol>
 

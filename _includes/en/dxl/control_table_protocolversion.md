@@ -1,4 +1,10 @@
-{% if page.product_group=='xl330' %}
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
+{% if passed_product_group=='xl330' %}
 
 To communicate with DYANMIXEL, it is important to select a proper protocol type.
 
@@ -29,28 +35,28 @@ DYNAMIXEL Protocol 2.0 is a basic communication protocol to communicate between 
 
 The S.Bus Protocol is a communication protocol commonly used by Futaba and FrSky RC servo products.
 
-- Multiple DYNAMIXELs, the maximum is 16, can be wired via signal cables. Notice that S.BUS protocol only allows for use **the range of [ID(7)] from 1 to 16**.
+- Multiple DYNAMIXELs, the maximum is 16, can be wired via signal cables. Notice that S.BUS protocol only allows for use **the range of [ID(7)](#id-{{ passed_model }}){: .popup2} from 1 to 16**.
 - The available range of data transmission is from **0 to 2,047 (11 bits)**.
-- If the [Operating Mode(11)] is **Position Control Mode**, data will be passed to the [Goal Position(116)].
-- If the [Operating Mode(11)] is **Velocity Mode**, data will be pased to [Goal Velocity(104)]. For your understanding, see the next graph of the control reference by the passed data via the protocol.
+- If the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2} is **Position Control Mode**, data will be passed to the [Goal Position(116)](#goal-position-{{ passed_model }}){: .popup2}.
+- If the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2} is **Velocity Mode**, data will be pased to [Goal Velocity(104)](#goal-velocity-{{ passed_model }}){: .popup2}. For your understanding, see the next graph of the control reference by the passed data via the protocol.
 
 <img src="/assets/images/dxl/x/xl330_temp/protocol_s_bus_graph.png" width="1100">
 
-**NOTE**: The maximum speed at the Velocity Control Mode relies on its [Velocity Limit(44)]. By configuring [Moving Threshold(24)], it is possible to set a motionless point, where The [Goal Velocity(104)] is 0.
+**NOTE**: The maximum speed at the Velocity Control Mode relies on its [Velocity Limit(44)](#velocity-limit-{{ passed_model }}{: .popup2}). By configuring [Moving Threshold(24)](#moving-threshold-{{ passed_model }}{: .popup2}), it is possible to set a motionless point, where The [Goal Velocity(104)] is 0.
 {: .notice}
 
 #### [iBUS Protocol](#ibus-protocol)
 
 The iBUS Protocol is a communication protocol commonly used by FrSky RC servo products.
 
-- Multiple DYNAMIXELs, the maximum is 14, can be wired via signal cables. Notice that S.BUS protocol only allows for use **the range of [ID(7)] from 1 to 14**.
+- Multiple DYNAMIXELs, the maximum is 14, can be wired via signal cables. Notice that S.BUS protocol only allows for use **the range of [ID(7)](#id-{{ passed_model }}){: .popup2} from 1 to 14**.
 - The available range of data transmission is from **0 to 16,383 (16 bits)**.
-- If the [Operating Mode(11)] is **Position Control Mode**, data will be passed to the [Goal Position(116)].
-- If the [Operating Mode(11)] is **Velocity Mode**, data will be pased to [Goal Velocity(104)]. For your understanding, see the next graph of the control reference by the passed data via the protocol.
+- If the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2} is **Position Control Mode**, data will be passed to the [Goal Position(116)](#goal-position-{{ passed_model }}){: .popup2}.
+- If the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2} is **Velocity Mode**, data will be pased to [Goal Velocity(104)](#goal-velocity-{{ passed_model }}){: .popup2}. For your understanding, see the next graph of the control reference by the passed data via the protocol.
 
 <img src="/assets/images/dxl/x/xl330_temp/protocol_ibus_graph.png" width="1100">
 
-**NOTE**: The maximum speed at the Velocity Control Mode relies on its [Velocity Limit(44)]. By configuring [Moving Threshold(24)], it is possible to set a motionless point, where The [Goal Velocity(104)] is 0.
+**NOTE**: The maximum speed at the Velocity Control Mode relies on its [Velocity Limit(44)](#velocity-limit-{{ passed_model }}{: .popup2}). By configuring [Moving Threshold(24)](#moving-threshold-{{ passed_model }}{: .popup2}), it is possible to set a motionless point, where The [Goal Velocity(104)](#goal-velocity-{{ passed_model }}){: .popup2} is 0.
 {: .notice}
 
 #### [RC-PWM Protocol](#rc-pwm-protocol)
@@ -59,18 +65,18 @@ The RC-PWM Protocol is a PWM (Pulse Width Modulation) signal generally used by R
 
 <img src="/assets/images/dxl/x/xl330_temp/protocol_rc_pwm_duty.png" width="550">
 
-- If the [Operating Mode(11)] is **Position Control Mode**, data will be passed to the [Goal Position(116)].
-- If the [Operating Mode(11)] is **Velocity Mode**, data will be pased to [Goal Velocity(104)]. For your understanding, see the next graph of the control reference by the passed data via the protocol.
+- If the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2} is **Position Control Mode**, data will be passed to the [Goal Position(116)](#goal-position-{{ passed_model }}){: .popup2}.
+- If the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2} is **Velocity Mode**, data will be pased to [Goal Velocity(104)](#goal-velocity-{{ passed_model }}){: .popup2}. For your understanding, see the next graph of the control reference by the passed data via the protocol.
 
 <img src="/assets/images/dxl/x/xl330_temp/protocl_rc_pwm_graph.png" width="1100">
 
-**NOTE**: The maximum speed at the Velocity Control Mode relies on its [Velocity Limit(44)]. By configuring [Moving Threshold(24)], it is possible to set a motionless point, where The [Goal Velocity(104)] is 0.
+**NOTE**: The maximum speed at the Velocity Control Mode relies on its [Velocity Limit(44)](#velocity-limit-{{ passed_model }}{: .popup2}). By configuring [Moving Threshold(24)](#moving-threshold-{{ passed_model }}{: .popup2}), it is possible to set a motionless point, where The [Goal Velocity(104)](#goal-velocity-{{ passed_model }}){: .popup2} is 0.
 {: .notice}
 
 {% else %}
 
-Users can select DYNAMIXEL protocol type (1.0 and 2.0).  
-Even if Protocol 1.0 is selected, Protocol 2.0 Control Table will be used.  
+Users can select DYNAMIXEL protocol type (1.0 and 2.0).
+Even if Protocol 1.0 is selected, Protocol 2.0 Control Table will be used.
 It is recommended to use an identical protocol type for multiple DYNAMIXEL.
 
 |   Value    | Protocol Type |                             Compatible DYNAMIXEL                              |

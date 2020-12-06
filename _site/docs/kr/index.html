@@ -37,8 +37,8 @@
 <meta property="og:title" content="ROBOTIS e-Manual">
 
 
-  <link rel="canonical" href="http://192.168.60.130:4000/docs/kr/">
-  <meta property="og:url" content="http://192.168.60.130:4000/docs/kr/">
+  <link rel="canonical" href="http://localhost:4000/docs/kr/">
+  <meta property="og:url" content="http://localhost:4000/docs/kr/">
 
 
 
@@ -66,7 +66,7 @@
       "@context" : "http://schema.org",
       "@type" : "Person",
       "name" : "ROBOTIS",
-      "url" : "http://192.168.60.130:4000",
+      "url" : "http://localhost:4000",
       "sameAs" : null
     }
   </script>
@@ -80,7 +80,7 @@
 
 
 <link
-  href="http://192.168.60.130:4000/feed.xml"
+  href="http://localhost:4000/feed.xml"
   type="application/atom+xml"
   rel="alternate"
   title="ROBOTIS e-Manual Feed"
@@ -226,7 +226,7 @@ $(function() {
       $('.popup').click(function(){
         console.log('popup_clicked');
         // var myVar = ""; 쌍따옴표는 배열로 불러오지 못함. 이유는 모름;;
-        
+
         ""
 
       // var Var_Temp = [ '', '' ];
@@ -235,36 +235,40 @@ $(function() {
       //   console.log("Var_Temp[1]:"+Var_Temp[1]);
       //   console.log("Var_Temp2: " + Var_Temp2);
 
-        
+
         // var myVar = ''; // Result > Who Am I ? :{"model"=>"xl430-w250", "product_group"=>"dxl_xl430"}
         //  console.log("Who Am I ? :"+ myVar);
         //  console.log("Who Am I [0]? :"+ myVar[0]); // Result > Who Am I ? :{
-        //  console.log("Who Am I [1]? :"+ myVar[1]); //Result > Who Am I ? :" 대괄호도 배열 인덱스의 값으로 보는듯.. 
+        //  console.log("Who Am I [1]? :"+ myVar[1]); //Result > Who Am I ? :" 대괄호도 배열 인덱스의 값으로 보는듯..
 
       });
-         
-      // 
+
+      //
       // $('.open-popup-link').magnificPopup({
       //   type:'inline',
       //   midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
       // });
-      // 
+      //
       $('.popup2').magnificPopup({
         type:'inline',
         midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        alignTop: true,
+        overflowY: 'scroll', // as we know that popup content is tall we set scroll overflow by default to avoid jump
+        // fixedContentPos: false,
+        // autoFocusLast: false,
         callbacks: {
 
             open: function() {
-              $('.popup').magnificPopup({
+            $('.popup_window').find(".popup").magnificPopup({
                     type: 'ajax',
                     alignTop: true,
                     overflowY: 'scroll',
-  
+
                   })
             },
           }
-      });      
-      
+      });
+
       $('.popup').magnificPopup({
 
         // New issue (20201124): Returning to the previous position need to be improved.
@@ -287,7 +291,7 @@ $(function() {
           },
 
           ajaxContentAdded: function() {
-            
+
             // popup 인자 전달 테스트 시작
             // var myVar = "";
             // ""
@@ -314,7 +318,7 @@ $(function() {
               console.log("passed_ref: " + '');
               console.log("passed_url: " + '/docs/kr/');
               console.log("Var_Temp3: "+ Var_Temp3);
-              
+
             },
             beforeClose: function() {
 
@@ -333,6 +337,8 @@ $(function() {
       $(function () {
         var currentHash = $(location).attr('hash');
         var filename = $(location).attr('href').split('/').reverse()[1];
+        console.log("currentHash: "+currentHash);
+        console.log("FileName: "+filename);
         $(document).scroll(function () {
           $('.header-link').each(function () {
             var top = window.pageYOffset;
@@ -402,13 +408,10 @@ $(function() {
     <script>
       function copyurl(item)
       {
-        // location.href = item.href;
         var copiedurl = decodeURI(item.href);
         var tempurl = $('<input>').val(copiedurl).appendTo('body').select();
         document.execCommand('copy');
         console.log(copiedurl);
-        // document.getElementById(id).href;
-        // document.execCommand('copy');
       }
     </script>
     <script>
@@ -484,7 +487,7 @@ $(function() {
     }
     </script>
 
-<script src="http://192.168.60.130:35729/livereload.js"></script></head>
+<script src="http://127.0.0.1:35729/livereload.js"></script></head>
 
   <body class="layout--splash">
 
@@ -528,140 +531,140 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xl320/" class="">XL-320</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xl320/" class="">XL-320</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xl430-w250/" class="">XL430-W250</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xl430-w250/" class="">XL430-W250</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/2xl430-w250/" class="">2XL430-W250</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/2xl430-w250/" class="">2XL430-W250</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xc430-w150/" class="">XC430-W150</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xc430-w150/" class="">XC430-W150</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xc430-w240/" class="">XC430-W240</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xc430-w240/" class="">XC430-W240</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/2xc430-w250/" class="">2XC430-W250</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/2xc430-w250/" class="">2XC430-W250</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm430-w210/" class="">XM430-W210</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xm430-w210/" class="">XM430-W210</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm430-w350/" class="">XM430-W350</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xm430-w350/" class="">XM430-W350</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-w210/" class="">XH430-W210</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh430-w210/" class="">XH430-W210</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-w350/" class="">XH430-W350</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh430-w350/" class="">XH430-W350</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-v210/" class="">XH430-V210</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh430-v210/" class="">XH430-V210</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-v350/" class="">XH430-V350</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh430-v350/" class="">XH430-V350</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm540-w150/" class="">XM540-W150</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xm540-w150/" class="">XM540-W150</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm540-w270/" class="">XM540-W270</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xm540-w270/" class="">XM540-W270</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-w150/" class="">XH540-W150</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh540-w150/" class="">XH540-W150</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-w270/" class="">XH540-W270</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh540-w270/" class="">XH540-W270</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-v150/" class="">XH540-V150</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh540-v150/" class="">XH540-V150</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-v270/" class="">XH540-V270</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xh540-v270/" class="">XH540-V270</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xw540-t140/" class="">XW540-T140</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xw540-t140/" class="">XW540-T140</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xw540-t260/" class="">XW540-T260</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/x/xw540-t260/" class="">XW540-T260</a>
                         </li>
                       
                     
@@ -682,42 +685,42 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/p/ph42-020-s300-r/" class="">PH42-020-S300-R (H42P)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/p/ph42-020-s300-r/" class="">PH42-020-S300-R (H42P)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/p/ph54-100-s500-r/" class="">PH54-100-S500-R (H54P)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/p/ph54-100-s500-r/" class="">PH54-100-S500-R (H54P)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/p/ph54-200-s500-r/" class="">PH54-200-S500-R (H54P)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/p/ph54-200-s500-r/" class="">PH54-200-S500-R (H54P)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/p/pm42-010-s260-r/" class="">PM42-010-S260-R (M42P)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/p/pm42-010-s260-r/" class="">PM42-010-S260-R (M42P)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/p/pm54-040-s250-r/" class="">PM54-040-S250-R (M54P)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/p/pm54-040-s250-r/" class="">PM54-040-S250-R (M54P)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/p/pm54-060-s250-r/" class="">PM54-060-S250-R (M54P)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/p/pm54-060-s250-r/" class="">PM54-060-S250-R (M54P)</a>
                         </li>
                       
                     
@@ -738,49 +741,49 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-12w/" class="">MX-12W</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/mx/mx-12w/" class="">MX-12W</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-28/" class="">MX-28T/R/AT/AR</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/mx/mx-28/" class="">MX-28T/R/AT/AR</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-64/" class="">MX-64T/R/AT/AR</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/mx/mx-64/" class="">MX-64T/R/AT/AR</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-106/" class="">MX-106T/R</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/mx/mx-106/" class="">MX-106T/R</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-28-2/" class="">MX-28T/R/AT/AR(2.0)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/mx/mx-28-2/" class="">MX-28T/R/AT/AR(2.0)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-64-2/" class="">MX-64T/R/AT/AR(2.0)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/mx/mx-64-2/" class="">MX-64T/R/AT/AR(2.0)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-106-2/" class="">MX-106T/R(2.0)</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/mx/mx-106-2/" class="">MX-106T/R(2.0)</a>
                         </li>
                       
                     
@@ -801,21 +804,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/ax/ax-12w/" class="">AX-12W</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/ax/ax-12w/" class="">AX-12W</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/ax/ax-12a/" class="">AX-12/12+/12A</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/ax/ax-12a/" class="">AX-12/12+/12A</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/ax/ax-18a/" class="">AX-18F/18A</a>
+                          <a href="http://localhost:4000/docs/kr/dxl/ax/ax-18a/" class="">AX-18F/18A</a>
                         </li>
                       
                     
@@ -836,7 +839,7 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/ex/ex-106+/" class="">EX-106+ <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/ex/ex-106+/" class="">EX-106+ <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -857,21 +860,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/dx/dx-113/" class="">DX-113 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/dx/dx-113/" class="">DX-113 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/dx/dx-116/" class="">DX-116 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/dx/dx-116/" class="">DX-116 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/dx/dx-117/" class="">DX-117 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/dx/dx-117/" class="">DX-117 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -892,28 +895,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-10/" class="">RX-10 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/rx/rx-10/" class="">RX-10 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-24f/" class="">RX-24F <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/rx/rx-24f/" class="">RX-24F <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-28/" class="">RX-28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/rx/rx-28/" class="">RX-28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-64/" class="">RX-64 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/rx/rx-64/" class="">RX-64 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -934,119 +937,119 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-200-s500-ra/" class="">H54-200-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/h54-200-s500-ra/" class="">H54-200-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-100-s500-ra/" class="">H54-100-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/h54-100-s500-ra/" class="">H54-100-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h42-20-s300-ra/" class="">H42-20-S300-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/h42-20-s300-ra/" class="">H42-20-S300-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-60-s250-ra/" class="">M54-60-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/m54-60-s250-ra/" class="">M54-60-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-40-s250-ra/" class="">M54-40-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/m54-40-s250-ra/" class="">M54-40-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m42-10-s260-ra/" class="">M42-10-S260-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/m42-10-s260-ra/" class="">M42-10-S260-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-200-s500-r/" class="">H54-200-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/h54-200-s500-r/" class="">H54-200-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-100-s500-r/" class="">H54-100-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/h54-100-s500-r/" class="">H54-100-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h42-20-s300-r/" class="">H42-20-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/h42-20-s300-r/" class="">H42-20-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-60-s250-r/" class="">M54-60-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/m54-60-s250-r/" class="">M54-60-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-40-s250-r/" class="">M54-40-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/m54-40-s250-r/" class="">M54-40-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m42-10-s260-r/" class="">M42-10-S260-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/m42-10-s260-r/" class="">M42-10-S260-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-50-s500-r/" class="">L54-50-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/l54-50-s500-r/" class="">L54-50-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-50-s290-r/" class="">L54-50-S290-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/l54-50-s290-r/" class="">L54-50-S290-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-30-s500-r/" class="">L54-30-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/l54-30-s500-r/" class="">L54-30-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-30-s400-r/" class="">L54-30-S400-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/l54-30-s400-r/" class="">L54-30-S400-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l42-10-s300-r/" class="">L42-10-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/dxl/pro/l42-10-s300-r/" class="">L42-10-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -1060,7 +1063,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/protocol1/">프로토콜 1.0</a>
+                    <a href="http://localhost:4000/docs/kr/dxl/protocol1/">프로토콜 1.0</a>
                   </li>
                 
               
@@ -1070,7 +1073,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/protocol2/">프로토콜 2.0</a>
+                    <a href="http://localhost:4000/docs/kr/dxl/protocol2/">프로토콜 2.0</a>
                   </li>
                 
               
@@ -1109,21 +1112,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/op/getting_started/" class="">로보티즈 OP <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/platform/op/getting_started/" class="">로보티즈 OP <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/op2/getting_started/" class="">로보티즈 OP2</a>
+                          <a href="http://localhost:4000/docs/kr/platform/op2/getting_started/" class="">로보티즈 OP2</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/op3/introduction/" class="">로보티즈 OP3</a>
+                          <a href="http://localhost:4000/docs/kr/platform/op3/introduction/" class="">로보티즈 OP3</a>
                         </li>
                       
                     
@@ -1144,28 +1147,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/rh_p12_rna/" class="">RH-P12-RN(A)</a>
+                          <a href="http://localhost:4000/docs/kr/platform/rh_p12_rna/" class="">RH-P12-RN(A)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/rh_p12_rn_ur/" class="">RH-P12-RN-UR</a>
+                          <a href="http://localhost:4000/docs/kr/platform/rh_p12_rn_ur/" class="">RH-P12-RN-UR</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/robothand_rx28/" class="">로봇핸드 RX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/platform/robothand_rx28/" class="">로봇핸드 RX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/robothand_mx28/" class="">로봇핸드 MX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/platform/robothand_mx28/" class="">로봇핸드 MX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -1179,7 +1182,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/platform/thormang3/introduction/">똘망3</a>
+                    <a href="http://localhost:4000/docs/kr/platform/thormang3/introduction/">똘망3</a>
                   </li>
                 
               
@@ -1189,7 +1192,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/platform/turtlebot3/overview/">터틀봇3</a>
+                    <a href="http://localhost:4000/docs/kr/platform/turtlebot3/overview/">터틀봇3</a>
                   </li>
                 
               
@@ -1206,21 +1209,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/manipulator_h/introduction/" class="">Manipulator-H <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/platform/manipulator_h/introduction/" class="">Manipulator-H <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/openmanipulator_p/overview/" class="">OpenMANIPULATOR-P</a>
+                          <a href="http://localhost:4000/docs/kr/platform/openmanipulator_p/overview/" class="">OpenMANIPULATOR-P</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/platform/openmanipulator_x/overview/" class="">OpenMANIPULATOR-X</a>
+                          <a href="http://localhost:4000/docs/kr/platform/openmanipulator_x/overview/" class="">OpenMANIPULATOR-X</a>
                         </li>
                       
                     
@@ -1263,28 +1266,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/bugkit/" class="">버그 키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/ollo/bugkit/" class="">버그 키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/explorer/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/ollo/explorer/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/inventor/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/ollo/inventor/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/ollo-4/" class="">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/ollo/ollo-4/" class="">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -1305,28 +1308,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-1/" class="">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream1-1/" class="">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-2/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream1-2/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-3/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream1-3/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-4/" class="">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream1-4/" class="">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -1353,35 +1356,35 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-1/" class="">1단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream2-1/" class="">1단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-2/" class="">2단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream2-2/" class="">2단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-3/" class="">3단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream2-3/" class="">3단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-4/" class="">4단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream2-4/" class="">4단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-5/" class="">5단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/dream/dream2-5/" class="">5단계 교육키트</a>
                         </li>
                       
                     
@@ -1405,21 +1408,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart1-1/" class="">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart1-1/" class="">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart1-2/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart1-2/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart1-3/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart1-3/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -1440,21 +1443,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart2-1/" class="">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart2-1/" class="">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart2-2/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart2-2/" class="">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart2-3/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart2-3/" class="">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -1475,28 +1478,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-1/" class="">1단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart3-1/" class="">1단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-2/" class="">2단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart3-2/" class="">2단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-3/" class="">3단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart3-3/" class="">3단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-4/" class="">4단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/smart/smart3-4/" class="">4단계 교육키트</a>
                         </li>
                       
                     
@@ -1517,14 +1520,14 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/iot/iot-1/" class="">1단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/iot/iot-1/" class="">1단계 교육키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/iot/iot-2/" class="">2단계 교육키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/iot/iot-2/" class="">2단계 교육키트</a>
                         </li>
                       
                     
@@ -1538,7 +1541,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/edu/info/">실과 로봇</a>
+                    <a href="http://localhost:4000/docs/kr/edu/info/">실과 로봇</a>
                   </li>
                 
               
@@ -1548,7 +1551,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/edu/car/">*자동차 로봇</a>
+                    <a href="http://localhost:4000/docs/kr/edu/car/">*자동차 로봇</a>
                   </li>
                 
               
@@ -1565,35 +1568,35 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/beginner/" class="">초급 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/bioloid/beginner/" class="">초급 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/comprehensive/" class="">종합 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/edu/bioloid/comprehensive/" class="">종합 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/stem/" class="">STEM 키트</a>
+                          <a href="http://localhost:4000/docs/kr/edu/bioloid/stem/" class="">STEM 키트</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/premium/" class="">프리미엄</a>
+                          <a href="http://localhost:4000/docs/kr/edu/bioloid/premium/" class="">프리미엄</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/gp/" class="">ROBOTIS GP</a>
+                          <a href="http://localhost:4000/docs/kr/edu/bioloid/gp/" class="">ROBOTIS GP</a>
                         </li>
                       
                     
@@ -1614,14 +1617,14 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/engineer/kit1/" class="">키트 1</a>
+                          <a href="http://localhost:4000/docs/kr/edu/engineer/kit1/" class="">키트 1</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/edu/engineer/kit2_introduction/" class="">키트 2</a>
+                          <a href="http://localhost:4000/docs/kr/edu/engineer/kit2_introduction/" class="">키트 2</a>
                         </li>
                       
                     
@@ -1635,7 +1638,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/edu/mini/">로보티즈 미니</a>
+                    <a href="http://localhost:4000/docs/kr/edu/mini/">로보티즈 미니</a>
                   </li>
                 
               
@@ -1668,21 +1671,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/dynamixel/dynamixel_sdk/overview/" class="">다이나믹셀 SDK</a>
+                          <a href="http://localhost:4000/docs/kr/software/dynamixel/dynamixel_sdk/overview/" class="">다이나믹셀 SDK</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/dynamixel/dynamixel_workbench/" class="">다이나믹셀 워크벤치</a>
+                          <a href="http://localhost:4000/docs/kr/software/dynamixel/dynamixel_workbench/" class="">다이나믹셀 워크벤치</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/dynamixel/dynamixel_wizard2/" class="">다이나믹셀 위자드 2.0</a>
+                          <a href="http://localhost:4000/docs/kr/software/dynamixel/dynamixel_wizard2/" class="">다이나믹셀 위자드 2.0</a>
                         </li>
                       
                     
@@ -1703,28 +1706,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/mobile_app/rplussmart/" class="">로보플러스 SMART</a>
+                          <a href="http://localhost:4000/docs/kr/software/mobile_app/rplussmart/" class="">로보플러스 SMART</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/mobile_app/rplusiot/" class="">로보플러스 IoT</a>
+                          <a href="http://localhost:4000/docs/kr/software/mobile_app/rplusiot/" class="">로보플러스 IoT</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/mobile_app/mini_app/" class="">로보티즈 미니</a>
+                          <a href="http://localhost:4000/docs/kr/software/mobile_app/mini_app/" class="">로보티즈 미니</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/rplus2_block/" class="">로보플러스 블록</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus2/rplus2_block/" class="">로보플러스 블록</a>
                         </li>
                       
                     
@@ -1745,28 +1748,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/task/getting_started/" class="">로보플러스 태스크</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus1/task/getting_started/" class="">로보플러스 태스크</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/manager/" class="">로보플러스 매니저</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus1/manager/" class="">로보플러스 매니저</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/motion/" class="">로보플러스 모션</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus1/motion/" class="">로보플러스 모션</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/dynamixel_wizard/" class="">다이나믹셀 위자드</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus1/dynamixel_wizard/" class="">다이나믹셀 위자드</a>
                         </li>
                       
                     
@@ -1787,35 +1790,35 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/task/" class="">로보플러스 태스크 2.0</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus2/task/" class="">로보플러스 태스크 2.0</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/manager/" class="">로보플러스 매니저 2.0</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus2/manager/" class="">로보플러스 매니저 2.0</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/motion/" class="">로보플러스 모션 2.0</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus2/motion/" class="">로보플러스 모션 2.0</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/design/" class="">로보플러스 디자인 2.0</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus2/design/" class="">로보플러스 디자인 2.0</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/scratch/" class="">로보플러스 스크래치</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus2/scratch/" class="">로보플러스 스크래치</a>
                         </li>
                       
                     
@@ -1829,7 +1832,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/software/rplustask3/">로보플러스 태스크 3.0</a>
+                    <a href="http://localhost:4000/docs/kr/software/rplustask3/">로보플러스 태스크 3.0</a>
                   </li>
                 
               
@@ -1846,28 +1849,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mtask/" class="">R+ m.Task</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mtask/" class="">R+ m.Task</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mtask20/" class="">R+ m.Task 2.0</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mtask20/" class="">R+ m.Task 2.0</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mmotion/" class="">R+ m.Motion 2.0</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mmotion/" class="">R+ m.Motion 2.0</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mdesign/" class="">R+ m.Design</a>
+                          <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mdesign/" class="">R+ m.Design</a>
                         </li>
                       
                     
@@ -1888,21 +1891,21 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/embedded_sdk/embedded_c_cm510/" class="">제어기 펌웨어 개발(CM-510/700)</a>
+                          <a href="http://localhost:4000/docs/kr/software/embedded_sdk/embedded_c_cm510/" class="">제어기 펌웨어 개발(CM-510/700)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/embedded_sdk/embedded_c_cm530/" class="">제어기 펌웨어 개발(CM-530)</a>
+                          <a href="http://localhost:4000/docs/kr/software/embedded_sdk/embedded_c_cm530/" class="">제어기 펌웨어 개발(CM-530)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/software/embedded_sdk/zigbee_sdk/" class="">지그비 SDK</a>
+                          <a href="http://localhost:4000/docs/kr/software/embedded_sdk/zigbee_sdk/" class="">지그비 SDK</a>
                         </li>
                       
                     
@@ -1916,7 +1919,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/software/opencm_ide/getting_started/">*OpenCM IDE</a>
+                    <a href="http://localhost:4000/docs/kr/software/opencm_ide/getting_started/">*OpenCM IDE</a>
                   </li>
                 
               
@@ -1926,7 +1929,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/software/arduino_ide/">아두이노 IDE</a>
+                    <a href="http://localhost:4000/docs/kr/software/arduino_ide/">아두이노 IDE</a>
                   </li>
                 
               
@@ -1942,7 +1945,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr/software/robotis_manipulator_libs/">ROBOTIS Manipulator library</a>
+                    <a href="http://localhost:4000/docs/kr/software/robotis_manipulator_libs/">ROBOTIS Manipulator library</a>
                   </li>
                 
               
@@ -1975,98 +1978,98 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-50/" class="">CM-50</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-50/" class="">CM-50</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-100/" class="">CM-100A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-100/" class="">CM-100A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-150/" class="">CM-150</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-150/" class="">CM-150</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-200/" class="">CM-200</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-200/" class="">CM-200</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-5/" class="">CM-5 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-5/" class="">CM-5 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-510/" class="">CM-510 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-510/" class="">CM-510 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-530/" class="">CM-530</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-530/" class="">CM-530</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-550/" class="">CM-550</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-550/" class="">CM-550</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-700/" class="">CM-700</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-700/" class="">CM-700</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-900/" class="">CM-900 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/cm-900/" class="">CM-900 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencm7/" class="">OpenCM7.0</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/opencm7/" class="">OpenCM7.0</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencm904/" class="">OpenCM9.04</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/opencm904/" class="">OpenCM9.04</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencm485exp/" class="">OpenCM 485 확장보드</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/opencm485exp/" class="">OpenCM 485 확장보드</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencr10/" class="">OpenCR1.0</a>
+                          <a href="http://localhost:4000/docs/kr/parts/controller/opencr10/" class="">OpenCR1.0</a>
                         </li>
                       
                     
@@ -2087,56 +2090,56 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/rc-100/" class="">RC-100A/100B</a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/rc-100/" class="">RC-100A/100B</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/rc-200/" class="">RC-200</a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/rc-200/" class="">RC-200</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/zig-110/" class="">ZIG-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/zig-110/" class="">ZIG-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-110/" class="">BT-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/bt-110/" class="">BT-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-210/" class="">BT-210</a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/bt-210/" class="">BT-210</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-410/" class="">BT-410</a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/bt-410/" class="">BT-410</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-410-dongle/" class="">BT-410 동글</a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/bt-410-dongle/" class="">BT-410 동글</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/communication/zig2serial/" class="">ZIG2Serial <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/communication/zig2serial/" class="">ZIG2Serial <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
@@ -2157,28 +2160,28 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/motor/gm-10a/" class="">감속모터(GM-10A)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/motor/gm-10a/" class="">감속모터(GM-10A)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/motor/h_speed_geared_motor/" class="">고속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/motor/h_speed_geared_motor/" class="">고속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/motor/l_speed_geared_motor/" class="">저속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/motor/l_speed_geared_motor/" class="">저속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/motor/servo_motor/" class="">서보모터(SM-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/motor/servo_motor/" class="">서보모터(SM-10)</a>
                         </li>
                       
                     
@@ -2199,35 +2202,35 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/interface/ln-101/" class="">LN-101</a>
+                          <a href="http://localhost:4000/docs/kr/parts/interface/ln-101/" class="">LN-101</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/interface/usb2dynamixel/" class="">USB2DYNAMIXEL <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/interface/usb2dynamixel/" class="">USB2DYNAMIXEL <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/interface/u2d2/" class="">U2D2</a>
+                          <a href="http://localhost:4000/docs/kr/parts/interface/u2d2/" class="">U2D2</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/interface/u2d2_power_hub/" class="">U2D2 파워 허브</a>
+                          <a href="http://localhost:4000/docs/kr/parts/interface/u2d2_power_hub/" class="">U2D2 파워 허브</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/interface/dynamixel_shield/" class="">다이나믹셀 쉴드</a>
+                          <a href="http://localhost:4000/docs/kr/parts/interface/dynamixel_shield/" class="">다이나믹셀 쉴드</a>
                         </li>
                       
                     
@@ -2248,84 +2251,84 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/irss-10/" class="">적외선 센서(IRSS-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/irss-10/" class="">적외선 센서(IRSS-10)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/dms-80/" class="">절대 거리 센서(DMS-80)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/dms-80/" class="">절대 거리 센서(DMS-80)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/ts-10/" class="">접촉 센서(TS-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/ts-10/" class="">접촉 센서(TS-10)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/ax-s1/" class="">통합 센서(AX-S1) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/ax-s1/" class="">통합 센서(AX-S1) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/gs-12/" class="">자이로 센서(GS-12)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/gs-12/" class="">자이로 센서(GS-12)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/ir-array/" class="">적외선 어레이 센서</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/ir-array/" class="">적외선 어레이 센서</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/cs-10/" class="">컬러 센서(CS-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/cs-10/" class="">컬러 센서(CS-10)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/mgss-10/" class="">자석 센서(MGSS-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/mgss-10/" class="">자석 센서(MGSS-10)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/tps-10/" class="">온도 센서(TPS-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/tps-10/" class="">온도 센서(TPS-10)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/pir-10/" class="">동작감지 센서(PIR-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/pir-10/" class="">동작감지 센서(PIR-10)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/cds-10/" class="">조도 센서(CDS-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/cds-10/" class="">조도 센서(CDS-10)</a>
                         </li>
                       
                     
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/tms-10/" class="">온습도 센서(TMS-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/sensor/tms-10/" class="">온습도 센서(TMS-10)</a>
                         </li>
                       
                     
@@ -2346,7 +2349,7 @@ $(function() {
                       
                       
                         <li class="mobile_depth_3">
-                          <a href="http://192.168.60.130:4000/docs/kr/parts/display/lm-10/" class="">LED 모듈(LM-10)</a>
+                          <a href="http://localhost:4000/docs/kr/parts/display/lm-10/" class="">LED 모듈(LM-10)</a>
                         </li>
                       
                     
@@ -2376,7 +2379,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr">다이나믹셀</a>
+                    <a href="http://localhost:4000/docs/kr">다이나믹셀</a>
                   </li>
                 
               
@@ -2386,7 +2389,7 @@ $(function() {
               
                 
                   <li class="mobile_depth_2">
-                    <a href="http://192.168.60.130:4000/docs/kr">터틀봇</a>
+                    <a href="http://localhost:4000/docs/kr">터틀봇</a>
                   </li>
                 
               
@@ -2410,7 +2413,7 @@ $(function() {
           
             
               
-                <button class="dropbtn" onclick="movetopage('http://192.168.60.130:4000/docs/kr/dxl/');">
+                <button class="dropbtn" onclick="movetopage('http://localhost:4000/docs/kr/dxl/');">
             다이나믹셀
           </button>
           
@@ -2424,7 +2427,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/x/">X 시리즈</a>
+                    <a href="http://localhost:4000/docs/kr/dxl/x/">X 시리즈</a>
               
 
               
@@ -2435,140 +2438,140 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xl320/" onClick="tab_handler(this)">XL-320</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xl320/" onClick="tab_handler(this)">XL-320</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xl430-w250/" onClick="tab_handler(this)">XL430-W250</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xl430-w250/" onClick="tab_handler(this)">XL430-W250</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/2xl430-w250/" onClick="tab_handler(this)">2XL430-W250</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/2xl430-w250/" onClick="tab_handler(this)">2XL430-W250</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xc430-w150/" onClick="tab_handler(this)">XC430-W150</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xc430-w150/" onClick="tab_handler(this)">XC430-W150</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xc430-w240/" onClick="tab_handler(this)">XC430-W240</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xc430-w240/" onClick="tab_handler(this)">XC430-W240</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/2xc430-w250/" onClick="tab_handler(this)">2XC430-W250</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/2xc430-w250/" onClick="tab_handler(this)">2XC430-W250</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm430-w210/" onClick="tab_handler(this)">XM430-W210</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xm430-w210/" onClick="tab_handler(this)">XM430-W210</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm430-w350/" onClick="tab_handler(this)">XM430-W350</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xm430-w350/" onClick="tab_handler(this)">XM430-W350</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-w210/" onClick="tab_handler(this)">XH430-W210</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh430-w210/" onClick="tab_handler(this)">XH430-W210</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-w350/" onClick="tab_handler(this)">XH430-W350</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh430-w350/" onClick="tab_handler(this)">XH430-W350</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-v210/" onClick="tab_handler(this)">XH430-V210</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh430-v210/" onClick="tab_handler(this)">XH430-V210</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh430-v350/" onClick="tab_handler(this)">XH430-V350</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh430-v350/" onClick="tab_handler(this)">XH430-V350</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm540-w150/" onClick="tab_handler(this)">XM540-W150</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xm540-w150/" onClick="tab_handler(this)">XM540-W150</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xm540-w270/" onClick="tab_handler(this)">XM540-W270</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xm540-w270/" onClick="tab_handler(this)">XM540-W270</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-w150/" onClick="tab_handler(this)">XH540-W150</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh540-w150/" onClick="tab_handler(this)">XH540-W150</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-w270/" onClick="tab_handler(this)">XH540-W270</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh540-w270/" onClick="tab_handler(this)">XH540-W270</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-v150/" onClick="tab_handler(this)">XH540-V150</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh540-v150/" onClick="tab_handler(this)">XH540-V150</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xh540-v270/" onClick="tab_handler(this)">XH540-V270</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xh540-v270/" onClick="tab_handler(this)">XH540-V270</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xw540-t140/" onClick="tab_handler(this)">XW540-T140</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xw540-t140/" onClick="tab_handler(this)">XW540-T140</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/x/xw540-t260/" onClick="tab_handler(this)">XW540-T260</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/x/xw540-t260/" onClick="tab_handler(this)">XW540-T260</a>
                     
                 
               </div>
@@ -2584,7 +2587,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/p/">P 시리즈 (PRO+)</a>
+                    <a href="http://localhost:4000/docs/kr/dxl/p/">P 시리즈 (PRO+)</a>
               
 
               
@@ -2595,42 +2598,42 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/p/ph42-020-s300-r/" onClick="tab_handler(this)">PH42-020-S300-R (H42P)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/p/ph42-020-s300-r/" onClick="tab_handler(this)">PH42-020-S300-R (H42P)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/p/ph54-100-s500-r/" onClick="tab_handler(this)">PH54-100-S500-R (H54P)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/p/ph54-100-s500-r/" onClick="tab_handler(this)">PH54-100-S500-R (H54P)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/p/ph54-200-s500-r/" onClick="tab_handler(this)">PH54-200-S500-R (H54P)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/p/ph54-200-s500-r/" onClick="tab_handler(this)">PH54-200-S500-R (H54P)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/p/pm42-010-s260-r/" onClick="tab_handler(this)">PM42-010-S260-R (M42P)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/p/pm42-010-s260-r/" onClick="tab_handler(this)">PM42-010-S260-R (M42P)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/p/pm54-040-s250-r/" onClick="tab_handler(this)">PM54-040-S250-R (M54P)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/p/pm54-040-s250-r/" onClick="tab_handler(this)">PM54-040-S250-R (M54P)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/p/pm54-060-s250-r/" onClick="tab_handler(this)">PM54-060-S250-R (M54P)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/p/pm54-060-s250-r/" onClick="tab_handler(this)">PM54-060-S250-R (M54P)</a>
                     
                 
               </div>
@@ -2646,7 +2649,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/">MX 시리즈</a>
+                    <a href="http://localhost:4000/docs/kr/dxl/mx/">MX 시리즈</a>
               
 
               
@@ -2657,49 +2660,49 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-12w/" onClick="tab_handler(this)">MX-12W</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/mx/mx-12w/" onClick="tab_handler(this)">MX-12W</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-28/" onClick="tab_handler(this)">MX-28T/R/AT/AR</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/mx/mx-28/" onClick="tab_handler(this)">MX-28T/R/AT/AR</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-64/" onClick="tab_handler(this)">MX-64T/R/AT/AR</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/mx/mx-64/" onClick="tab_handler(this)">MX-64T/R/AT/AR</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-106/" onClick="tab_handler(this)">MX-106T/R</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/mx/mx-106/" onClick="tab_handler(this)">MX-106T/R</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-28-2/" onClick="tab_handler(this)">MX-28T/R/AT/AR(2.0)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/mx/mx-28-2/" onClick="tab_handler(this)">MX-28T/R/AT/AR(2.0)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-64-2/" onClick="tab_handler(this)">MX-64T/R/AT/AR(2.0)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/mx/mx-64-2/" onClick="tab_handler(this)">MX-64T/R/AT/AR(2.0)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/mx/mx-106-2/" onClick="tab_handler(this)">MX-106T/R(2.0)</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/mx/mx-106-2/" onClick="tab_handler(this)">MX-106T/R(2.0)</a>
                     
                 
               </div>
@@ -2725,21 +2728,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/ax/ax-12w/" onClick="tab_handler(this)">AX-12W</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/ax/ax-12w/" onClick="tab_handler(this)">AX-12W</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/ax/ax-12a/" onClick="tab_handler(this)">AX-12/12+/12A</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/ax/ax-12a/" onClick="tab_handler(this)">AX-12/12+/12A</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/ax/ax-18a/" onClick="tab_handler(this)">AX-18F/18A</a>
+                      <a href="http://localhost:4000/docs/kr/dxl/ax/ax-18a/" onClick="tab_handler(this)">AX-18F/18A</a>
                     
                 
               </div>
@@ -2765,7 +2768,7 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/ex/ex-106+/" onClick="tab_handler(this)">EX-106+ <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/ex/ex-106+/" onClick="tab_handler(this)">EX-106+ <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -2791,21 +2794,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/dx/dx-113/" onClick="tab_handler(this)">DX-113 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/dx/dx-113/" onClick="tab_handler(this)">DX-113 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/dx/dx-116/" onClick="tab_handler(this)">DX-116 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/dx/dx-116/" onClick="tab_handler(this)">DX-116 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/dx/dx-117/" onClick="tab_handler(this)">DX-117 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/dx/dx-117/" onClick="tab_handler(this)">DX-117 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -2831,28 +2834,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-10/" onClick="tab_handler(this)">RX-10 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/rx/rx-10/" onClick="tab_handler(this)">RX-10 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-24f/" onClick="tab_handler(this)">RX-24F <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/rx/rx-24f/" onClick="tab_handler(this)">RX-24F <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-28/" onClick="tab_handler(this)">RX-28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/rx/rx-28/" onClick="tab_handler(this)">RX-28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/rx/rx-64/" onClick="tab_handler(this)">RX-64 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/rx/rx-64/" onClick="tab_handler(this)">RX-64 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -2868,7 +2871,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/">PRO 시리즈 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                    <a href="http://localhost:4000/docs/kr/dxl/pro/">PRO 시리즈 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
               
 
               
@@ -2879,119 +2882,119 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-200-s500-ra/" onClick="tab_handler(this)">H54-200-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/h54-200-s500-ra/" onClick="tab_handler(this)">H54-200-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-100-s500-ra/" onClick="tab_handler(this)">H54-100-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/h54-100-s500-ra/" onClick="tab_handler(this)">H54-100-S500-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h42-20-s300-ra/" onClick="tab_handler(this)">H42-20-S300-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/h42-20-s300-ra/" onClick="tab_handler(this)">H42-20-S300-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-60-s250-ra/" onClick="tab_handler(this)">M54-60-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/m54-60-s250-ra/" onClick="tab_handler(this)">M54-60-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-40-s250-ra/" onClick="tab_handler(this)">M54-40-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/m54-40-s250-ra/" onClick="tab_handler(this)">M54-40-S250-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m42-10-s260-ra/" onClick="tab_handler(this)">M42-10-S260-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/m42-10-s260-ra/" onClick="tab_handler(this)">M42-10-S260-R(A) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-200-s500-r/" onClick="tab_handler(this)">H54-200-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/h54-200-s500-r/" onClick="tab_handler(this)">H54-200-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h54-100-s500-r/" onClick="tab_handler(this)">H54-100-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/h54-100-s500-r/" onClick="tab_handler(this)">H54-100-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/h42-20-s300-r/" onClick="tab_handler(this)">H42-20-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/h42-20-s300-r/" onClick="tab_handler(this)">H42-20-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-60-s250-r/" onClick="tab_handler(this)">M54-60-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/m54-60-s250-r/" onClick="tab_handler(this)">M54-60-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m54-40-s250-r/" onClick="tab_handler(this)">M54-40-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/m54-40-s250-r/" onClick="tab_handler(this)">M54-40-S250-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/m42-10-s260-r/" onClick="tab_handler(this)">M42-10-S260-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/m42-10-s260-r/" onClick="tab_handler(this)">M42-10-S260-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-50-s500-r/" onClick="tab_handler(this)">L54-50-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/l54-50-s500-r/" onClick="tab_handler(this)">L54-50-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-50-s290-r/" onClick="tab_handler(this)">L54-50-S290-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/l54-50-s290-r/" onClick="tab_handler(this)">L54-50-S290-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-30-s500-r/" onClick="tab_handler(this)">L54-30-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/l54-30-s500-r/" onClick="tab_handler(this)">L54-30-S500-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l54-30-s400-r/" onClick="tab_handler(this)">L54-30-S400-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/l54-30-s400-r/" onClick="tab_handler(this)">L54-30-S400-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/dxl/pro/l42-10-s300-r/" onClick="tab_handler(this)">L42-10-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/dxl/pro/l42-10-s300-r/" onClick="tab_handler(this)">L42-10-S300-R <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -3007,7 +3010,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/protocol1/">프로토콜 1.0</a>
+                    <a href="http://localhost:4000/docs/kr/dxl/protocol1/">프로토콜 1.0</a>
               
 
               
@@ -3020,7 +3023,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/dxl/protocol2/">프로토콜 2.0</a>
+                    <a href="http://localhost:4000/docs/kr/dxl/protocol2/">프로토콜 2.0</a>
               
 
               
@@ -3047,7 +3050,7 @@ $(function() {
           
             
               
-                <button class="dropbtn" onclick="movetopage('http://192.168.60.130:4000/docs/kr/platform/');">
+                <button class="dropbtn" onclick="movetopage('http://localhost:4000/docs/kr/platform/');">
             플랫폼
           </button>
           
@@ -3061,7 +3064,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/platform/op/getting_started/">로보티즈 OP</a>
+                    <a href="http://localhost:4000/docs/kr/platform/op/getting_started/">로보티즈 OP</a>
               
 
               
@@ -3072,21 +3075,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/op/getting_started/" onClick="tab_handler(this)">로보티즈 OP <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/platform/op/getting_started/" onClick="tab_handler(this)">로보티즈 OP <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/op2/getting_started/" onClick="tab_handler(this)">로보티즈 OP2</a>
+                      <a href="http://localhost:4000/docs/kr/platform/op2/getting_started/" onClick="tab_handler(this)">로보티즈 OP2</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/op3/introduction/" onClick="tab_handler(this)">로보티즈 OP3</a>
+                      <a href="http://localhost:4000/docs/kr/platform/op3/introduction/" onClick="tab_handler(this)">로보티즈 OP3</a>
                     
                 
               </div>
@@ -3112,28 +3115,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/rh_p12_rna/" onClick="tab_handler(this)">RH-P12-RN(A)</a>
+                      <a href="http://localhost:4000/docs/kr/platform/rh_p12_rna/" onClick="tab_handler(this)">RH-P12-RN(A)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/rh_p12_rn_ur/" onClick="tab_handler(this)">RH-P12-RN-UR</a>
+                      <a href="http://localhost:4000/docs/kr/platform/rh_p12_rn_ur/" onClick="tab_handler(this)">RH-P12-RN-UR</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/robothand_rx28/" onClick="tab_handler(this)">로봇핸드 RX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/platform/robothand_rx28/" onClick="tab_handler(this)">로봇핸드 RX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/robothand_mx28/" onClick="tab_handler(this)">로봇핸드 MX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/platform/robothand_mx28/" onClick="tab_handler(this)">로봇핸드 MX28 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -3149,7 +3152,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/platform/thormang3/introduction/">똘망3</a>
+                    <a href="http://localhost:4000/docs/kr/platform/thormang3/introduction/">똘망3</a>
               
 
               
@@ -3162,7 +3165,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/platform/turtlebot3/overview/">터틀봇3</a>
+                    <a href="http://localhost:4000/docs/kr/platform/turtlebot3/overview/">터틀봇3</a>
               
 
               
@@ -3175,7 +3178,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/platform/openmanipulator_main">오픈매니퓰레이터</a>
+                    <a href="http://localhost:4000/docs/kr/platform/openmanipulator_main">오픈매니퓰레이터</a>
               
 
               
@@ -3186,21 +3189,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/manipulator_h/introduction/" onClick="tab_handler(this)">Manipulator-H <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/platform/manipulator_h/introduction/" onClick="tab_handler(this)">Manipulator-H <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/openmanipulator_p/overview/" onClick="tab_handler(this)">OpenMANIPULATOR-P</a>
+                      <a href="http://localhost:4000/docs/kr/platform/openmanipulator_p/overview/" onClick="tab_handler(this)">OpenMANIPULATOR-P</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/platform/openmanipulator_x/overview/" onClick="tab_handler(this)">OpenMANIPULATOR-X</a>
+                      <a href="http://localhost:4000/docs/kr/platform/openmanipulator_x/overview/" onClick="tab_handler(this)">OpenMANIPULATOR-X</a>
                     
                 
               </div>
@@ -3221,7 +3224,7 @@ $(function() {
           
             
               
-                <button class="dropbtn" onclick="movetopage('http://192.168.60.130:4000/docs/kr/edu/');">
+                <button class="dropbtn" onclick="movetopage('http://localhost:4000/docs/kr/edu/');">
             교육키트
           </button>
           
@@ -3273,28 +3276,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/bugkit/" onClick="tab_handler(this)">버그 키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/ollo/bugkit/" onClick="tab_handler(this)">버그 키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/explorer/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/ollo/explorer/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/inventor/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/ollo/inventor/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/ollo/ollo-4/" onClick="tab_handler(this)">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/ollo/ollo-4/" onClick="tab_handler(this)">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -3320,28 +3323,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-1/" onClick="tab_handler(this)">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream1-1/" onClick="tab_handler(this)">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-2/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream1-2/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-3/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream1-3/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream1-4/" onClick="tab_handler(this)">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream1-4/" onClick="tab_handler(this)">4단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
@@ -3375,35 +3378,35 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-1/" onClick="tab_handler(this)">1단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream2-1/" onClick="tab_handler(this)">1단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-2/" onClick="tab_handler(this)">2단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream2-2/" onClick="tab_handler(this)">2단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-3/" onClick="tab_handler(this)">3단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream2-3/" onClick="tab_handler(this)">3단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-4/" onClick="tab_handler(this)">4단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream2-4/" onClick="tab_handler(this)">4단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/dream/dream2-5/" onClick="tab_handler(this)">5단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/dream/dream2-5/" onClick="tab_handler(this)">5단계 교육키트</a>
                     
                 
                   
@@ -3433,21 +3436,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart1-1/" onClick="tab_handler(this)">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart1-1/" onClick="tab_handler(this)">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart1-2/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart1-2/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart1-3/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart1-3/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -3473,21 +3476,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart2-1/" onClick="tab_handler(this)">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart2-1/" onClick="tab_handler(this)">1단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart2-2/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart2-2/" onClick="tab_handler(this)">2단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart2-3/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart2-3/" onClick="tab_handler(this)">3단계 교육키트 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -3513,28 +3516,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-1/" onClick="tab_handler(this)">1단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart3-1/" onClick="tab_handler(this)">1단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-2/" onClick="tab_handler(this)">2단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart3-2/" onClick="tab_handler(this)">2단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-3/" onClick="tab_handler(this)">3단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart3-3/" onClick="tab_handler(this)">3단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/smart/smart3-4/" onClick="tab_handler(this)">4단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/smart/smart3-4/" onClick="tab_handler(this)">4단계 교육키트</a>
                     
                 
               </div>
@@ -3560,14 +3563,14 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/iot/iot-1/" onClick="tab_handler(this)">1단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/iot/iot-1/" onClick="tab_handler(this)">1단계 교육키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/iot/iot-2/" onClick="tab_handler(this)">2단계 교육키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/iot/iot-2/" onClick="tab_handler(this)">2단계 교육키트</a>
                     
                 
               </div>
@@ -3583,7 +3586,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/edu/info/">실과 로봇</a>
+                    <a href="http://localhost:4000/docs/kr/edu/info/">실과 로봇</a>
               
 
               
@@ -3596,7 +3599,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/edu/car/">자동차 로봇 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                    <a href="http://localhost:4000/docs/kr/edu/car/">자동차 로봇 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
               
 
               
@@ -3609,7 +3612,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/">바이올로이드</a>
+                    <a href="http://localhost:4000/docs/kr/edu/bioloid/">바이올로이드</a>
               
 
               
@@ -3620,35 +3623,35 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/beginner/" onClick="tab_handler(this)">초급 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/bioloid/beginner/" onClick="tab_handler(this)">초급 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/comprehensive/" onClick="tab_handler(this)">종합 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/edu/bioloid/comprehensive/" onClick="tab_handler(this)">종합 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/stem/" onClick="tab_handler(this)">STEM 키트</a>
+                      <a href="http://localhost:4000/docs/kr/edu/bioloid/stem/" onClick="tab_handler(this)">STEM 키트</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/premium/" onClick="tab_handler(this)">프리미엄</a>
+                      <a href="http://localhost:4000/docs/kr/edu/bioloid/premium/" onClick="tab_handler(this)">프리미엄</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/bioloid/gp/" onClick="tab_handler(this)">ROBOTIS GP</a>
+                      <a href="http://localhost:4000/docs/kr/edu/bioloid/gp/" onClick="tab_handler(this)">ROBOTIS GP</a>
                     
                 
               </div>
@@ -3674,14 +3677,14 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/engineer/kit1/" onClick="tab_handler(this)">키트 1</a>
+                      <a href="http://localhost:4000/docs/kr/edu/engineer/kit1/" onClick="tab_handler(this)">키트 1</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/edu/engineer/kit2_introduction/" onClick="tab_handler(this)">키트 2</a>
+                      <a href="http://localhost:4000/docs/kr/edu/engineer/kit2_introduction/" onClick="tab_handler(this)">키트 2</a>
                     
                 
               </div>
@@ -3697,7 +3700,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/edu/mini/">로보티즈 미니</a>
+                    <a href="http://localhost:4000/docs/kr/edu/mini/">로보티즈 미니</a>
               
 
               
@@ -3715,7 +3718,7 @@ $(function() {
           
             
               
-                <button class="dropbtn" onclick="movetopage('http://192.168.60.130:4000/docs/kr/software/');">
+                <button class="dropbtn" onclick="movetopage('http://localhost:4000/docs/kr/software/');">
             소프트웨어
           </button>
           
@@ -3739,21 +3742,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/dynamixel/dynamixel_sdk/overview/" onClick="tab_handler(this)">다이나믹셀 SDK</a>
+                      <a href="http://localhost:4000/docs/kr/software/dynamixel/dynamixel_sdk/overview/" onClick="tab_handler(this)">다이나믹셀 SDK</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/dynamixel/dynamixel_workbench/" onClick="tab_handler(this)">다이나믹셀 워크벤치</a>
+                      <a href="http://localhost:4000/docs/kr/software/dynamixel/dynamixel_workbench/" onClick="tab_handler(this)">다이나믹셀 워크벤치</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/dynamixel/dynamixel_wizard2/" onClick="tab_handler(this)">다이나믹셀 위자드 2.0</a>
+                      <a href="http://localhost:4000/docs/kr/software/dynamixel/dynamixel_wizard2/" onClick="tab_handler(this)">다이나믹셀 위자드 2.0</a>
                     
                 
               </div>
@@ -3779,28 +3782,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/mobile_app/rplussmart/" onClick="tab_handler(this)">로보플러스 SMART</a>
+                      <a href="http://localhost:4000/docs/kr/software/mobile_app/rplussmart/" onClick="tab_handler(this)">로보플러스 SMART</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/mobile_app/rplusiot/" onClick="tab_handler(this)">로보플러스 IoT</a>
+                      <a href="http://localhost:4000/docs/kr/software/mobile_app/rplusiot/" onClick="tab_handler(this)">로보플러스 IoT</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/mobile_app/mini_app/" onClick="tab_handler(this)">로보티즈 미니</a>
+                      <a href="http://localhost:4000/docs/kr/software/mobile_app/mini_app/" onClick="tab_handler(this)">로보티즈 미니</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/rplus2_block/" onClick="tab_handler(this)">로보플러스 블록</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus2/rplus2_block/" onClick="tab_handler(this)">로보플러스 블록</a>
                     
                 
               </div>
@@ -3826,28 +3829,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/task/getting_started/" onClick="tab_handler(this)">로보플러스 태스크</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus1/task/getting_started/" onClick="tab_handler(this)">로보플러스 태스크</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/manager/" onClick="tab_handler(this)">로보플러스 매니저</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus1/manager/" onClick="tab_handler(this)">로보플러스 매니저</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/motion/" onClick="tab_handler(this)">로보플러스 모션</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus1/motion/" onClick="tab_handler(this)">로보플러스 모션</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus1/dynamixel_wizard/" onClick="tab_handler(this)">다이나믹셀 위자드</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus1/dynamixel_wizard/" onClick="tab_handler(this)">다이나믹셀 위자드</a>
                     
                 
               </div>
@@ -3873,35 +3876,35 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/task/" onClick="tab_handler(this)">로보플러스 태스크 2.0</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus2/task/" onClick="tab_handler(this)">로보플러스 태스크 2.0</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/manager/" onClick="tab_handler(this)">로보플러스 매니저 2.0</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus2/manager/" onClick="tab_handler(this)">로보플러스 매니저 2.0</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/motion/" onClick="tab_handler(this)">로보플러스 모션 2.0</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus2/motion/" onClick="tab_handler(this)">로보플러스 모션 2.0</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/design/" onClick="tab_handler(this)">로보플러스 디자인 2.0</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus2/design/" onClick="tab_handler(this)">로보플러스 디자인 2.0</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus2/scratch/" onClick="tab_handler(this)">로보플러스 스크래치</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus2/scratch/" onClick="tab_handler(this)">로보플러스 스크래치</a>
                     
                 
               </div>
@@ -3917,7 +3920,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/software/rplustask3/">로보플러스 태스크 3.0</a>
+                    <a href="http://localhost:4000/docs/kr/software/rplustask3/">로보플러스 태스크 3.0</a>
               
 
               
@@ -3940,28 +3943,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mtask/" onClick="tab_handler(this)">R+ m.Task</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mtask/" onClick="tab_handler(this)">R+ m.Task</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mtask20/" onClick="tab_handler(this)">R+ m.Task 2.0</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mtask20/" onClick="tab_handler(this)">R+ m.Task 2.0</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mmotion/" onClick="tab_handler(this)">R+ m.Motion 2.0</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mmotion/" onClick="tab_handler(this)">R+ m.Motion 2.0</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/rplus_mobile/mdesign/" onClick="tab_handler(this)">R+ m.Design</a>
+                      <a href="http://localhost:4000/docs/kr/software/rplus_mobile/mdesign/" onClick="tab_handler(this)">R+ m.Design</a>
                     
                 
               </div>
@@ -3977,7 +3980,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/software/embedded_sdk/">EMBEDDED SDK</a>
+                    <a href="http://localhost:4000/docs/kr/software/embedded_sdk/">EMBEDDED SDK</a>
               
 
               
@@ -3988,21 +3991,21 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/embedded_sdk/embedded_c_cm510/" onClick="tab_handler(this)">제어기 펌웨어 개발(CM-510/700)</a>
+                      <a href="http://localhost:4000/docs/kr/software/embedded_sdk/embedded_c_cm510/" onClick="tab_handler(this)">제어기 펌웨어 개발(CM-510/700)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/embedded_sdk/embedded_c_cm530/" onClick="tab_handler(this)">제어기 펌웨어 개발(CM-530)</a>
+                      <a href="http://localhost:4000/docs/kr/software/embedded_sdk/embedded_c_cm530/" onClick="tab_handler(this)">제어기 펌웨어 개발(CM-530)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/software/embedded_sdk/zigbee_sdk/" onClick="tab_handler(this)">지그비 SDK</a>
+                      <a href="http://localhost:4000/docs/kr/software/embedded_sdk/zigbee_sdk/" onClick="tab_handler(this)">지그비 SDK</a>
                     
                 
               </div>
@@ -4018,7 +4021,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/software/opencm_ide/getting_started/">OpenCM IDE <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                    <a href="http://localhost:4000/docs/kr/software/opencm_ide/getting_started/">OpenCM IDE <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
               
 
               
@@ -4031,7 +4034,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/software/arduino_ide/">아두이노 IDE</a>
+                    <a href="http://localhost:4000/docs/kr/software/arduino_ide/">아두이노 IDE</a>
               
 
               
@@ -4053,7 +4056,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/software/robotis_manipulator_libs/">ROBOTIS Manipulator library</a>
+                    <a href="http://localhost:4000/docs/kr/software/robotis_manipulator_libs/">ROBOTIS Manipulator library</a>
               
 
               
@@ -4071,7 +4074,7 @@ $(function() {
           
             
               
-                <button class="dropbtn" onclick="movetopage('http://192.168.60.130:4000/docs/kr/parts/');">
+                <button class="dropbtn" onclick="movetopage('http://localhost:4000/docs/kr/parts/');">
             부품
           </button>
           
@@ -4085,7 +4088,7 @@ $(function() {
               
                 
                   
-                    <a href="http://192.168.60.130:4000/docs/kr/parts/controller/controller_compatibility/">제어기</a>
+                    <a href="http://localhost:4000/docs/kr/parts/controller/controller_compatibility/">제어기</a>
               
 
               
@@ -4096,98 +4099,98 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-50/" onClick="tab_handler(this)">CM-50</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-50/" onClick="tab_handler(this)">CM-50</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-100/" onClick="tab_handler(this)">CM-100A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-100/" onClick="tab_handler(this)">CM-100A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-150/" onClick="tab_handler(this)">CM-150</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-150/" onClick="tab_handler(this)">CM-150</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-200/" onClick="tab_handler(this)">CM-200</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-200/" onClick="tab_handler(this)">CM-200</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-5/" onClick="tab_handler(this)">CM-5 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-5/" onClick="tab_handler(this)">CM-5 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-510/" onClick="tab_handler(this)">CM-510 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-510/" onClick="tab_handler(this)">CM-510 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-530/" onClick="tab_handler(this)">CM-530</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-530/" onClick="tab_handler(this)">CM-530</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-550/" onClick="tab_handler(this)">CM-550</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-550/" onClick="tab_handler(this)">CM-550</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-700/" onClick="tab_handler(this)">CM-700</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-700/" onClick="tab_handler(this)">CM-700</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/cm-900/" onClick="tab_handler(this)">CM-900 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/cm-900/" onClick="tab_handler(this)">CM-900 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencm7/" onClick="tab_handler(this)">OpenCM7.0</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/opencm7/" onClick="tab_handler(this)">OpenCM7.0</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencm904/" onClick="tab_handler(this)">OpenCM9.04</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/opencm904/" onClick="tab_handler(this)">OpenCM9.04</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencm485exp/" onClick="tab_handler(this)">OpenCM 485 확장보드</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/opencm485exp/" onClick="tab_handler(this)">OpenCM 485 확장보드</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/controller/opencr10/" onClick="tab_handler(this)">OpenCR1.0</a>
+                      <a href="http://localhost:4000/docs/kr/parts/controller/opencr10/" onClick="tab_handler(this)">OpenCR1.0</a>
                     
                 
               </div>
@@ -4213,56 +4216,56 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/rc-100/" onClick="tab_handler(this)">RC-100A/100B</a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/rc-100/" onClick="tab_handler(this)">RC-100A/100B</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/rc-200/" onClick="tab_handler(this)">RC-200</a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/rc-200/" onClick="tab_handler(this)">RC-200</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/zig-110/" onClick="tab_handler(this)">ZIG-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/zig-110/" onClick="tab_handler(this)">ZIG-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-110/" onClick="tab_handler(this)">BT-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/bt-110/" onClick="tab_handler(this)">BT-100/110A <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-210/" onClick="tab_handler(this)">BT-210</a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/bt-210/" onClick="tab_handler(this)">BT-210</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-410/" onClick="tab_handler(this)">BT-410</a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/bt-410/" onClick="tab_handler(this)">BT-410</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/bt-410-dongle/" onClick="tab_handler(this)">BT-410 동글</a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/bt-410-dongle/" onClick="tab_handler(this)">BT-410 동글</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/communication/zig2serial/" onClick="tab_handler(this)">ZIG2Serial <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/communication/zig2serial/" onClick="tab_handler(this)">ZIG2Serial <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
               </div>
@@ -4288,28 +4291,28 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/motor/gm-10a/" onClick="tab_handler(this)">감속모터(GM-10A)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/motor/gm-10a/" onClick="tab_handler(this)">감속모터(GM-10A)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/motor/h_speed_geared_motor/" onClick="tab_handler(this)">고속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/motor/h_speed_geared_motor/" onClick="tab_handler(this)">고속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/motor/l_speed_geared_motor/" onClick="tab_handler(this)">저속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/motor/l_speed_geared_motor/" onClick="tab_handler(this)">저속 감속모터 <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/motor/servo_motor/" onClick="tab_handler(this)">서보모터(SM-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/motor/servo_motor/" onClick="tab_handler(this)">서보모터(SM-10)</a>
                     
                 
               </div>
@@ -4335,35 +4338,35 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/interface/ln-101/" onClick="tab_handler(this)">LN-101</a>
+                      <a href="http://localhost:4000/docs/kr/parts/interface/ln-101/" onClick="tab_handler(this)">LN-101</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/interface/usb2dynamixel/" onClick="tab_handler(this)">USB2DYNAMIXEL <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/interface/usb2dynamixel/" onClick="tab_handler(this)">USB2DYNAMIXEL <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/interface/u2d2/" onClick="tab_handler(this)">U2D2</a>
+                      <a href="http://localhost:4000/docs/kr/parts/interface/u2d2/" onClick="tab_handler(this)">U2D2</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/interface/u2d2_power_hub/" onClick="tab_handler(this)">U2D2 파워 허브</a>
+                      <a href="http://localhost:4000/docs/kr/parts/interface/u2d2_power_hub/" onClick="tab_handler(this)">U2D2 파워 허브</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/interface/dynamixel_shield/" onClick="tab_handler(this)">다이나믹셀 쉴드</a>
+                      <a href="http://localhost:4000/docs/kr/parts/interface/dynamixel_shield/" onClick="tab_handler(this)">다이나믹셀 쉴드</a>
                     
                 
               </div>
@@ -4389,84 +4392,84 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/irss-10/" onClick="tab_handler(this)">적외선 센서(IRSS-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/irss-10/" onClick="tab_handler(this)">적외선 센서(IRSS-10)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/dms-80/" onClick="tab_handler(this)">절대 거리 센서(DMS-80)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/dms-80/" onClick="tab_handler(this)">절대 거리 센서(DMS-80)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/ts-10/" onClick="tab_handler(this)">접촉 센서(TS-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/ts-10/" onClick="tab_handler(this)">접촉 센서(TS-10)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/ax-s1/" onClick="tab_handler(this)">통합 센서(AX-S1) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/ax-s1/" onClick="tab_handler(this)">통합 센서(AX-S1) <span class="fa-stack fa-2x"><i class="fa fa-usd fa-stack-1x" style="color:white"></i><i class="fa fa-ban fa-stack-2x" style="color:red"></i></span></a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/gs-12/" onClick="tab_handler(this)">자이로 센서(GS-12)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/gs-12/" onClick="tab_handler(this)">자이로 센서(GS-12)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/ir-array/" onClick="tab_handler(this)">적외선 어레이 센서</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/ir-array/" onClick="tab_handler(this)">적외선 어레이 센서</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/cs-10/" onClick="tab_handler(this)">컬러 센서(CS-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/cs-10/" onClick="tab_handler(this)">컬러 센서(CS-10)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/mgss-10/" onClick="tab_handler(this)">자석 센서(MGSS-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/mgss-10/" onClick="tab_handler(this)">자석 센서(MGSS-10)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/tps-10/" onClick="tab_handler(this)">온도 센서(TPS-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/tps-10/" onClick="tab_handler(this)">온도 센서(TPS-10)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/pir-10/" onClick="tab_handler(this)">동작감지 센서(PIR-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/pir-10/" onClick="tab_handler(this)">동작감지 센서(PIR-10)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/cds-10/" onClick="tab_handler(this)">조도 센서(CDS-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/cds-10/" onClick="tab_handler(this)">조도 센서(CDS-10)</a>
                     
                 
                   
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/sensor/tms-10/" onClick="tab_handler(this)">온습도 센서(TMS-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/sensor/tms-10/" onClick="tab_handler(this)">온습도 센서(TMS-10)</a>
                     
                 
               </div>
@@ -4492,7 +4495,7 @@ $(function() {
 
                   
                     
-                      <a href="http://192.168.60.130:4000/docs/kr/parts/display/lm-10/" onClick="tab_handler(this)">LED 모듈(LM-10)</a>
+                      <a href="http://localhost:4000/docs/kr/parts/display/lm-10/" onClick="tab_handler(this)">LED 모듈(LM-10)</a>
                     
                 
               </div>
@@ -4565,7 +4568,7 @@ $(function() {
       
       
       
-      <a href="http://192.168.60.130:4000/"><button class="switch_ko_en" id="switch_ko_en">English</button></a>
+      <a href="http://localhost:4000/"><button class="switch_ko_en" id="switch_ko_en">English</button></a>
     </div>
 
     <div class="community_link">
@@ -4777,7 +4780,7 @@ $(window).resize(function() {
       </footer>
     </div>
 
-    <script src="http://192.168.60.130:4000/assets/js/main.min.js"></script>
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
 
 
 

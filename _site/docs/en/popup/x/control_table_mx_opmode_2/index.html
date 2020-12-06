@@ -2,6 +2,11 @@
 <div id=popup class="popup_window">
   <h1 id="operating-mode">Operating Mode</h1>
 
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
 <table>
   <thead>
     <tr>
@@ -38,31 +43,36 @@
 <p><strong>NOTE</strong> : Switching Operating Mode will reset gains(PID, Feedfoward) properly to the selected Operating Mode. The profile generator and limits will also be reset.</p>
 
 <ol>
-  <li><a href="/docs/en/popup/x/control_table_profile_velocity" class="popup">Profile Velocity(112)</a>, [Profile Acceleration(108)]{: .popup} : Reset to ‘0’</li>
-  <li>[Goal PWM(100)]{: .popup} : Reset to [PWM Limit(36)]{: .popup}</li>
+  <li><a href="#profile-velocity-" class="popup2">Profile Velocity(112)</a>, <a href="#profile-acceleration-" class="popup2">Profile Acceleration(108)</a> : Reset to ‘0’</li>
+  <li><a href="#goal-pwm-" class="popup2">Goal PWM(100)</a> : Reset to <a href="#pwm-limit-" class="popup2">PWM Limit(36)</a></li>
 </ol>
 </div>
 
 <div class="notice">
-<p><strong>NOTE</strong> : PWM is the abbreviation for Pulse Width Modulation that modulates PWM Duty to control motors.<br />
+<p><strong>NOTE</strong> : PWM is the abbreviation for Pulse Width Modulation that modulates PWM Duty to control motors.
 It changes pulse width to control average supply voltage to the motor and this technique is widely used in the motor control field.</p>
 
 <ol>
   <li>PWM Control Mode is similar to the Wheel Mode of DYNAMIXEL <a href="/docs/en/dxl/ax/ax-12w/#cw-compliance-margin">AX</a> and <a href="/docs/en/dxl/rx/rx-10/#moving-speed-32">RX</a> series.</li>
-  <li>Use <a href="#goal-pwm100">Goal PWM(100)</a> on PWM Control Mode in order to control supply voltage for DYNAMIXEL.</li>
+  <li>Use <a href="#goal-pwm-" class="popup2">Goal PWM(100)</a> on PWM Control Mode in order to control supply voltage for DYNAMIXEL.</li>
 </ol>
 </div>
 
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
 <div class="notice">
-<p><strong>NOTE</strong> :  <a href="#present-position">Present Position(132)</a>  represents 4 byte continuous range from -2,147,483,648 to 2,147,483,647 when Torque is turned off regardless of Operating Mode(11).<br />
-However,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within one full rotation in following cases:</p>
+<p><strong>NOTE</strong> :  <a href="#present-position-" class="popup2">Present Position(132)</a>  represents 4 byte continuous range from -2,147,483,648 to 2,147,483,647 when Torque is turned off regardless of Operating Mode(11).
+However,  Present Position(132)  will be reset to an absolute position value within one full rotation in following cases:</p>
 <ol>
-  <li>When Operating Mode(11) switches to <strong>Position Control Mode</strong>,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within a full rotation.</li>
-  <li>When torque is turned on in <strong>Position Control Mode</strong>,  <a href="#present-position">Present Position(132)</a>  will be reset to an absolute position value within one full rotation.</li>
+  <li>When Operating Mode(11) switches to <strong>Position Control Mode</strong>,  Present Position(132)  will be reset to an absolute position value within a full rotation.</li>
+  <li>When torque is turned on in <strong>Position Control Mode</strong>,  Present Position(132)  will be reset to an absolute position value within one full rotation.</li>
   <li>Turning on the power supply or using <a href="/docs/en/dxl/protocol2/#reboot">Reboot Instruction</a>.</li>
 </ol>
 
-<p>Notice that  <a href="#present-position">Present Position(132)</a>  value can be affected by  <a href="#homing-offset">Homing Offset(20)</a> .</p>
+<p>Notice that  Present Position(132)  value can be affected by  <a href="#homing-offset-" class="popup2">Homing Offset(20)</a> .</p>
 </div>
 
 

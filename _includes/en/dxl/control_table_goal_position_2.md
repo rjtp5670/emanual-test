@@ -1,4 +1,8 @@
 {% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
 
 
 # Goal Position
@@ -9,7 +13,7 @@ The Goal Position(116) sets desired position.  From the front view of DYNAMIXEL,
 | Mode     | Values     | Description |
 | :--------: | :--------: | :--------: |
 | Position Control Mode | Min Position Limit(52) ~ Max Position Limit(48)| Initial Value : 0 ~ 4,095|
-|Extended Position Control Mode|-1,048,575 ~ 1,048,575|-256[rev] ~ 256[rev]|{% if passed_product_group!='dxl_xl430' and page.ref!='mx-28-2' %}
+|Extended Position Control Mode|-1,048,575 ~ 1,048,575|-256[rev] ~ 256[rev]|{% if passed_product_group!='dxl_xl430' and passed_model!='mx-28-2' %}
 |Current-based Position Control Mode|-1,048,575 ~ 1,048,575|-256[rev] ~ 256[rev]|{% else %}{% endif %}
 
 |Degree Conversion Constant|Description|
@@ -18,9 +22,9 @@ The Goal Position(116) sets desired position.  From the front view of DYNAMIXEL,
 
 
 {% capture notice_01 %}
-**NOTE** : The [Profile Velocity(112)](#profile-velocity112) and the [Profile Acceleration(108)](#profile-acceleration108) are applied in below cases.
-- When the [Operating Mode(11)](#operating-mode11) is **Position Control Mode**, the [Profile Velocity(112)](#profile-velocity112) and the [Profile Acceleration(108)](#profile-acceleration108) are used to create a new profile if the [Goal Position(116)](#goal-position116) is updated.
-- When the [Operating Mode(11)](#operating-mode11) is **Velocity Control Mode**, the [Profile Acceleration(108)](#profile-acceleration108) is used to create a new profile if [Goal Velocity(104)](#goal-velocity104) is updated.
+**NOTE** : The [Profile Velocity(112)](#profile-velocity-{{ passed_model }}){: .popup2} and the [Profile Acceleration(108)](#profile-acceleration-{{ passed_model }}){: .popup2} are applied in below cases.
+- When the [Operating Mode(11)](#operating-mode-{{ passed_model }}){: .popup2} is **Position Control Mode**, the Profile Velocity(112) and the Profile Acceleration(108) are used to create a new profile if the Goal Position(116) is updated.
+- When the Operating Mode(11) is **Velocity Control Mode**, the Profile Acceleration(108) is used to create a new profile if [Goal Velocity(104)](#goal-velocity104) is updated.
 {% endcapture %}
 <div class="notice">{{ notice_01 | markdownify }}</div>
 

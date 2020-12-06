@@ -2,9 +2,14 @@
 <div id=popup class="popup_window">
   <h1 id="velocity-pi-gain">Velocity PI Gain</h1>
 
-<p>The Velocity PI Gains(76, 78) indicate gains of Velocity Control Mode.<br />
-Gains of DYNAMIXEL’s internal controller can be calculated from Gains of the Control Table as shown below.<br />
-The constant in each equations include sampling time.<br />
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
+<p>The Velocity PI Gains(76, 78) indicate gains of Velocity Control Mode.
+Gains of DYNAMIXEL’s internal controller can be calculated from Gains of the Control Table as shown below.
+The constant in each equations include sampling time.
 Velocity P Gain of DYNAMIXEL’s internal controller is abbreviated to K<sub>V</sub>P and that of the Control Table is abbreviated to K<sub>V</sub>P<sub>(TBL)</sub>.</p>
 
 <table>
@@ -37,13 +42,13 @@ Velocity P Gain of DYNAMIXEL’s internal controller is abbreviated to K<sub>V</
 
 <p>Below figure is a block diagram describing the velocity controller in Velocity Control Mode. When the instruction transmitted from the user is received by DYNAMIXEL, it takes following steps until driving the horn.</p>
 <ol>
-  <li>An Instruction from the user is transmitted via DYNAMIXEL bus, then registered to [Goal Velocity(104)].</li>
-  <li>[Goal Velocity(104)] is converted to desired velocity trajectory by [Profile Acceleration(108)].</li>
-  <li>The desired velocity trajectory is stored at [Velocity Trajectory(136)].</li>
+  <li>An Instruction from the user is transmitted via DYNAMIXEL bus, then registered to <a href="#goal-velocity-" class="popup2">Goal Velocity(104)</a>.</li>
+  <li>Goal Velocity(104) is converted to desired velocity trajectory by <a href="#profile-acceleration-" class="popup2">Profile Acceleration(108)</a>.</li>
+  <li>The desired velocity trajectory is stored at <a href="#velocity-trajectory-" class="popup2">Velocity Trajectory(136)</a>.</li>
   <li>PI controller calculates PWM output for the motor based on the desired velocity trajectory.</li>
-  <li>[Goal PWM(100)] sets a limit on the calculated PWM output and decides the final PWM value.</li>
+  <li><a href="#goal-pwm-" class="popup2">Goal PWM(100)</a> sets a limit on the calculated PWM output and decides the final PWM value.</li>
   <li>The final PWM value is applied to the motor through an Inverter, and the horn of DYNAMIXEL is driven.</li>
-  <li>Results are stored at [Present Position(132)], [Present Velocity(128)], [Present PWM(124)] and [Present Current(126)].</li>
+  <li>Results are stored at <a href="#present-position-" class="popup2">Present Position(132)</a>, <a href="#present-velocity-" class="popup2">Present Velocity(128)</a>, <a href="#present-pwm-" class="popup2">Present PWM(124)</a> and <a href="#present-current-" class="popup2">Present Current(126)</a>.</li>
 </ol>
 
 <p><img src="/assets/images/dxl/velocity_controller_pi_gain.jpg" alt="" /></p>

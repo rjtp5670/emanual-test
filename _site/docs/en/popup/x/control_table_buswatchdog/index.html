@@ -2,6 +2,11 @@
 <div id=popup class="popup_window">
   <h1 id="bus-watchdog">Bus Watchdog</h1>
 
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
 <p>The Bus Watchdog(98) is a safety device (Fail-safe) to stops the DYNAMIXEL if the communication between the controller and DYNAMIXEL communication (RS485, TTL) is disconnected due to an unspecified error.
 The communication is defined as all the Instruction Packet in the DYNAMIXEL Protocol.</p>
 
@@ -37,9 +42,9 @@ The communication is defined as all the Instruction Packet in the DYNAMIXEL Prot
   </tbody>
 </table>
 
-<p>The Bus Watchdog function monitors the communication interval (time) between the controller and DYNAMIXEL when [Torque Enable(64)] is ‘1’.
+<p>The Bus Watchdog function monitors the communication interval (time) between the controller and DYNAMIXEL when <a href="#torque-enable-" class="popup2">Torque Enable(64)</a> is ‘1’.
 If the measured communication interval (time) is larger than Bus Watchdog(98), the DYNAMIXEL will stop. Bus Watchdog(98) will be changed to ‘-1’ (Bus Watchdog Error).
-If the Bus Watchdog Error screen appears, the Goal Value ([Goal PWM(100)], [Goal Current(102)], [Goal Velocity(104)], [Goal Position(116)]) will be changed to read-only-access.
+If the Bus Watchdog Error screen appears, the Goal Value (<a href="#goal-pwm-" class="popup2">Goal PWM(100)</a>, [Goal Current(102)], <a href="#goal-velocity-" class="popup2">Goal Velocity(104)</a>, <a href="#goal-position-" class="popup2">Goal Position(116)</a>) will be changed to read-only-access.
 Therefore, when a new value is written to the Goal Value, a Range Error will be returned via the Status packet.
 If the value of Bus Watchdog(98) is changed to ‘0’, Bus Watchdog Error will be cleared.</p>
 
@@ -51,14 +56,14 @@ If the value of Bus Watchdog(98) is changed to ‘0’, Bus Watchdog Error will 
 
 <p>The following is the example of the operation of the Bus Watchdog function.</p>
 <ol>
-  <li>After setting the [Operating Mode(11)] to speed control mode, change the [Torque Enable(64)] to ‘1’.</li>
-  <li>If ‘50’ is written in the [Goal Velocity(104)], the DYNAMIXEL will rotate in CCW direction.</li>
-  <li>Change the value of [Bus Watchdog(98)] to ‘100’ (2,000 [ms]). (Activate Bus Watchdog Function)</li>
-  <li>If no instruction packet is received for 2,000 [ms], the DYNAMIXEL will stop. When it stops, the [Profile Acceleration(108)] and [Profile Velocity(112)] are applied as ‘0’.</li>
+  <li>After setting the <a href="#operating-mode-" class="popup2">Operating Mode(11)</a> to speed control mode, change the Torque Enable(64) to ‘1’.</li>
+  <li>If ‘50’ is written in the <a href="#goal-velocity-" class="popup2">Goal Velocity(104)</a>, the DYNAMIXEL will rotate in CCW direction.</li>
+  <li>Change the value of <a href="#bus-watchdog-" class="popup2">Bus Watchdog(98)</a> to ‘100’ (2,000 [ms]). (Activate Bus Watchdog Function)</li>
+  <li>If no instruction packet is received for 2,000 [ms], the DYNAMIXEL will stop. When it stops, the <a href="#profile-acceleration-" class="popup2">Profile Acceleration(108)</a> and <a href="#profile-velocity-" class="popup2">Profile Velocity(112)</a> are applied as ‘0’.</li>
   <li>The value of [Bus Watchdog(98)] changes to ‘-1’ (Bus Watchdog Error). At this time, the access to the Goal Value will be changed to read-only.</li>
-  <li>If ‘150’ is written to the [Goal Velocity(104)], Range Error will be returned via Status Packet.</li>
-  <li>If the value of [Bus Watchdog(98)] is changed to ‘0’, Bus Watchdog Error will be cleared.</li>
-  <li>If “150” is written in the [Goal Velocity(104)], the DYNAMIXEL will rotate in CCW direction.</li>
+  <li>If ‘150’ is written to the <a href="#goal-velocity-" class="popup2">Goal Velocity(104)</a>, Range Error will be returned via Status Packet.</li>
+  <li>If the value of Bus Watchdog(98) is changed to ‘0’, Bus Watchdog Error will be cleared.</li>
+  <li>If “150” is written in the Goal Velocity(104), the DYNAMIXEL will rotate in CCW direction.</li>
 </ol>
 
 

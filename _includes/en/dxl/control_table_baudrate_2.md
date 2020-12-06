@@ -1,6 +1,12 @@
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
+
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+- 
 The Baud Rate(8) determines serial communication speed between a controller and DYNAMIXEL.
 
-{% if page.product_group=='xl330' %}
+{% if passed_product_group=='xl330' %}
 
 |   Value    |   Baud Rate   | Margin of Error |
 |:----------:|:-------------:|:---------------:|
@@ -30,6 +36,6 @@ The Baud Rate(8) determines serial communication speed between a controller and 
 **NOTE** : Less than 3% of the baud rate error margin will not affect to UART communication.
 {: .notice}
 
-**NOTE** : For the stable communication with higher Baudrate, configure USB Latency value to the lower.  
-[USB Latency Setting](/docs/en/software/dynamixel/dynamixel_wizard2/#usb-latency-setting) 
+**NOTE** : For the stable communication with higher Baudrate, configure USB Latency value to the lower.
+[USB Latency Setting](/docs/en/software/dynamixel/dynamixel_wizard2/#usb-latency-setting)
 {: .notice}

@@ -1,11 +1,17 @@
-The DYNAMIXEL can protect itself by detecting dangerous situations that could occur during the operation.  
-Each Bit is inclusively processed with the ‘OR’ logic, therefore, multiple options can be generated.  
-For instance, when ‘0x05’ (binary : 00000101) is defined in {% if page.product_group=='dxl_ax' or page.product_group=='dxl_dx' or page.product_group=='dxl_ex' or page.product_group=='dxl_rx' or page.product_group=='dxl_mx' %} [Shutdown(18)]{: .popup}, {% elsif page.product_group=='dxl_pro' %} [Shutdown(48)]{: .popup}, {% else %} [Shutdown(63)]{: .popup}, {% endif %} DYNAMIXEL can detect both Input Voltage Error(binary : 00000001) and Overheating Error(binary : 00000100).  
-If those errors are detected, {% if page.product_group=='dxl_ax' or page.product_group=='dxl_dx' or page.product_group=='dxl_ex' or page.product_group=='dxl_rx' or page.product_group=='dxl_mx' %} [Torque Enable(24)]{: .popup} {% elsif page.product_group=='dxl_pro_a' or page.product_group=='dxl_p' %} [Torque Enable(512)]{: .popup} {% elsif page.product_group=='dxl_pro' %} [Torque Enable(562)]{: .popup} {% else %} [Torque Enable(64)]{: .popup} {% endif %} is cleared to ‘0’ and the motor output becomes 0 [%].  
-REBOOT is the only method to reset {% if page.product_group=='dxl_ax' or page.product_group=='dxl_dx' or page.product_group=='dxl_ex' or page.product_group=='dxl_rx' or page.product_group=='dxl_mx' %} Torque Enable(24) {% elsif page.product_group=='dxl_pro_a' or page.product_group=='dxl_p' %} Torque Enable(512) {% elsif page.product_group=='dxl_pro' %} Torque Enable(562) {% else %} Torque Enable(64) {% endif %} to ‘1’(Torque ON) after the shutdown.  
-{% if page.product_group=='dxl_ax' or page.product_group=='dxl_dx' or page.product_group=='dxl_ex' or page.product_group=='dxl_rx' or page.product_group=='dxl_mx' %}{% else %} Check [Hardware Error Bit(0x80)] in a error field of Status Packet or a present status via {% if page.product_group=='dxl_pro' %} [Hardware Error Status(892)] {% elsif page.product_group=='dxl_pro_a' or page.product_group=='dxl_p' %} [Hardware Error Status(518)] {% else %} [Hardware Error Status(70)] {% endif %} {% endif %}. The followings are detectable situations.
+{% assign passed_product_group = include.passed_ref %}
+{% assign passed_model = include.passing_model %}
 
-{% if page.product_group=='dxl_ax' or page.product_group=='dxl_dx' or page.product_group=='dxl_ex' or page.product_group=='dxl_rx' or page.product_group=='dxl_mx' %}
+- Passed Ref: {{ passed_product_group }}
+- Passed Model: {{ passed_model }}
+
+The DYNAMIXEL can protect itself by detecting dangerous situations that could occur during the operation.
+Each Bit is inclusively processed with the ‘OR’ logic, therefore, multiple options can be generated.
+For instance, when ‘0x05’ (binary : 00000101) is defined in {% if passed_product_group=='dxl_ax' or passed_product_group=='dxl_dx' or passed_product_group=='dxl_ex' or passed_product_group=='dxl_rx' or passed_product_group=='dxl_mx' %} [Shutdown(18)](#shutdown-{{ passed_model }}){: .popup2}, {% elsif passed_product_group=='dxl_pro' %} [Shutdown(48)](#shutdown-{{ passed_model }}){: .popup2}, {% else %} [Shutdown(63)](#shutdown-{{ passed_model }}){: .popup2}, {% endif %} DYNAMIXEL can detect both Input Voltage Error(binary : 00000001) and Overheating Error(binary : 00000100).
+If those errors are detected, {% if passed_product_group=='dxl_ax' or passed_product_group=='dxl_dx' or passed_product_group=='dxl_ex' or passed_product_group=='dxl_rx' or passed_product_group=='dxl_mx' %} [Torque Enable(24)](#torque-enable-{{ passed_model }}){: .popup2} {% elsif passed_product_group=='dxl_pro_a' or passed_product_group=='dxl_p' %} [Torque Enable(512)](#torque-enable-{{ passed_model }}){: .popup2} {% elsif passed_product_group=='dxl_pro' %} [Torque Enable(562)](#torque-enable-{{ passed_model }}){: .popup2} {% else %} [Torque Enable(64)](#torque-enable-{{ passed_model }}){: .popup2} {% endif %} is cleared to ‘0’ and the motor output becomes 0 [%].
+REBOOT is the only method to reset {% if passed_product_group=='dxl_ax' or passed_product_group=='dxl_dx' or passed_product_group=='dxl_ex' or passed_product_group=='dxl_rx' or passed_product_group=='dxl_mx' %} Torque Enable(24) {% elsif passed_product_group=='dxl_pro_a' or passed_product_group=='dxl_p' %} Torque Enable(512) {% elsif passed_product_group=='dxl_pro' %} Torque Enable(562) {% else %} Torque Enable(64) {% endif %} to ‘1’(Torque ON) after the shutdown.
+{% if passed_product_group=='dxl_ax' or passed_product_group=='dxl_dx' or passed_product_group=='dxl_ex' or passed_product_group=='dxl_rx' or passed_product_group=='dxl_mx' %}{% else %} Check [Hardware Error Bit(0x80)](#hardware-error-status-{{ passed_model }}){: .popup2} in a error field of Status Packet or a present status via {% if passed_product_group=='dxl_pro' %} [Hardware Error Status(892)](#hardware-error-status-{{ passed_model }}){: .popup2} {% elsif passed_product_group=='dxl_pro_a' or passed_product_group=='dxl_p' %} [Hardware Error Status(518)](#hardware-error-status-{{ passed_model }}){: .popup2} {% else %} [Hardware Error Status(70)](#hardware-error-status-{{ passed_model }}){: .popup2} {% endif %} {% endif %}. The followings are detectable situations.
+
+{% if passed_product_group=='dxl_ax' or passed_product_group=='dxl_dx' or passed_product_group=='dxl_ex' or passed_product_group=='dxl_rx' or passed_product_group=='dxl_mx' %}
 | Bit | Item | Description |
 |:-----:|:-------------------:|:-----------------------------------------------------------------------------------------------------------|
 | Bit 7 | 0 | - |
@@ -16,7 +22,7 @@ REBOOT is the only method to reset {% if page.product_group=='dxl_ax' or page.pr
 | Bit 2 | OverHeating Error | When the internal temperature is out of the range of operating temperature set in the Control Table |
 | Bit 1 | Angle Limit Error | When Goal Position is written with the value that is not between CW Angle Limit and CCW Angle Limit |
 | Bit 0 | Input Voltage Error | When the applied voltage is out of the range of operating voltage set in the Control Table |
-{% elsif page.product_group=='dxl_pro' or page.product_group=='dxl_pro_a' or page.product_group=='dxl_p' %}
+{% elsif passed_product_group=='dxl_pro' or passed_product_group=='dxl_pro_a' or passed_product_group=='dxl_p' %}
 | Bit | Item | Description |
 |:-----:|:--------------------------------:|:--------------------------------------------------------------------------------|
 | Bit 7 | - | Not used, always '0' |
@@ -36,13 +42,13 @@ REBOOT is the only method to reset {% if page.product_group=='dxl_ax' or page.pr
 | Bit 4 | Electrical Shock Error(default) | Detect electric shock on the circuit or insufficient power to operate the motor |
 | Bit 3 | Motor Encoder Error | Detect malfunction of the motor encoder |
 | Bit 2 | OverHeating Error(default) | Detect internal temperature exceeds the configured operating temperature |
-| Bit 1 | - | Unused, Always '0' |{% if page.product_group=='xl330' %}
+| Bit 1 | - | Unused, Always '0' |{% if passed_product_group=='xl330' %}
 | Bit 0 | Input Voltage Error (default) | Detect input voltage exceeds the configured operating voltage |{% else %}
 | Bit 0 | Input Voltage Error | Detect input voltage exceeds the configured operating voltage |{% endif %}
 
 {% endif %}
 
-{% if page.product_group=='dxl_xw540' %}
+{% if passed_product_group=='dxl_xw540' %}
 {% capture shutdown_01 %}
 **NOTE** : If Shutdown occurs, **reboot the device**.
 
@@ -51,13 +57,13 @@ REBOOT is the only method to reset {% if page.product_group=='dxl_ax' or page.pr
 {% endcapture %}
 <div class="notice">{{ shutdown_01 | markdownify }}</div>
 
-{% elsif page.product_group=='dxl_ax' or page.product_group=='dxl_dx' or page.product_group=='dxl_ex' or page.product_group=='dxl_rx' or page.product_group=='dxl_mx' %}
+{% elsif passed_product_group=='dxl_ax' or passed_product_group=='dxl_dx' or passed_product_group=='dxl_ex' or passed_product_group=='dxl_rx' or passed_product_group=='dxl_mx' %}
 **NOTE** : If Shutdown occurs, **LED will flicker every second.**
 {: .notice}
 {% else %}
 {% capture shutdown_01 %}
 **NOTE** :
-{% if page.product_group=='dxl_pro' or page.product_group=='dxl_pro_a' or page.product_group=='dxl_p' %}1. If Shutdown occurs, **Dynamic brake** will be activated.{% else %}{% endif %} 2. If Shutdown occurs, **LED will flicker every second**. {% if page.product_group=='dxl_pro' or page.product_group=='dxl_pro_a' or page.product_group=='dxl_p' or page.product_group=='xl330' %}{% else %}(**Firmware v41 or above**){% endif %} 3. If Shutdown occurs, **reboot the device**.
+{% if passed_product_group=='dxl_pro' or passed_product_group=='dxl_pro_a' or passed_product_group=='dxl_p' %}1. If Shutdown occurs, **Dynamic brake** will be activated.{% else %}{% endif %} 2. If Shutdown occurs, **LED will flicker every second**. {% if passed_product_group=='dxl_pro' or passed_product_group=='dxl_pro_a' or passed_product_group=='dxl_p' or passed_product_group=='xl330' %}{% else %}(**Firmware v41 or above**){% endif %} 3. If Shutdown occurs, **reboot the device**.
 
 - H/W REBOOT : Turn off and turn on the power again
 - S/W REBOOT : Transmit REBOOT Instruction (For more details, refer to the [Reboot](/docs/en/dxl/protocol2/#reboot) section of e-Manual.)

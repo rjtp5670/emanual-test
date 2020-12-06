@@ -4,12 +4,17 @@
 
 <p>The Hardware Error Statusindicates hardware error status.</p>
 
-<p>The DYNAMIXEL can protect itself by detecting dangerous situations that could occur during the operation.<br />
-Each Bit is inclusively processed with the ‘OR’ logic, therefore, multiple options can be generated.<br />
-For instance, when ‘0x05’ (binary : 00000101) is defined in  <a href="/docs/en/popup/x/control_table_shutdown" class="popup">Shutdown(63)</a>,  DYNAMIXEL can detect both Input Voltage Error(binary : 00000001) and Overheating Error(binary : 00000100).<br />
-If those errors are detected,  <a href="/docs/en/popup/x/control_table_torque_enable" class="popup">Torque Enable(64)</a>  is cleared to ‘0’ and the motor output becomes 0 [%].<br />
-REBOOT is the only method to reset  Torque Enable(64)  to ‘1’(Torque ON) after the shutdown.<br />
- Check [Hardware Error Bit(0x80)] in a error field of Status Packet or a present status via  <a href="#hardware-error-status">Hardware Error Status(70)</a>  . The followings are detectable situations.</p>
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
+<p>The DYNAMIXEL can protect itself by detecting dangerous situations that could occur during the operation.
+Each Bit is inclusively processed with the ‘OR’ logic, therefore, multiple options can be generated.
+For instance, when ‘0x05’ (binary : 00000101) is defined in  <a href="#shutdown-" class="popup2">Shutdown(63)</a>,  DYNAMIXEL can detect both Input Voltage Error(binary : 00000001) and Overheating Error(binary : 00000100).
+If those errors are detected,  <a href="#torque-enable-" class="popup2">Torque Enable(64)</a>  is cleared to ‘0’ and the motor output becomes 0 [%].
+REBOOT is the only method to reset  Torque Enable(64)  to ‘1’(Torque ON) after the shutdown.
+ Check <a href="#hardware-error-status-" class="popup2">Hardware Error Bit(0x80)</a> in a error field of Status Packet or a present status via  <a href="#hardware-error-status-" class="popup2">Hardware Error Status(70)</a>  . The followings are detectable situations.</p>
 
 <table>
   <thead>

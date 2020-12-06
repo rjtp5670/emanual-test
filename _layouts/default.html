@@ -75,7 +75,7 @@
       $('.popup').click(function(){
         console.log('popup_clicked');
         // var myVar = "{{ page.tab_ref.ref1.product_group }}"; 쌍따옴표는 배열로 불러오지 못함. 이유는 모름;;
-        
+
         "{% for temp in page.tab_ref.ref1 %} console.log({{ temp }} {% endfor %}"
 
       // var Var_Temp = [ '{{page.tab_ref.ref1.model}}', '{{page.tab_ref.ref1.product_group}}' ];
@@ -84,36 +84,40 @@
       //   console.log("Var_Temp[1]:"+Var_Temp[1]);
       //   console.log("Var_Temp2: " + Var_Temp2);
 
-        
+
         // var myVar = '{{ page.tab_ref.ref1 }}'; // Result > Who Am I ? :{"model"=>"xl430-w250", "product_group"=>"dxl_xl430"}
         //  console.log("Who Am I ? :"+ myVar);
         //  console.log("Who Am I [0]? :"+ myVar[0]); // Result > Who Am I ? :{
-        //  console.log("Who Am I [1]? :"+ myVar[1]); //Result > Who Am I ? :" 대괄호도 배열 인덱스의 값으로 보는듯.. 
+        //  console.log("Who Am I [1]? :"+ myVar[1]); //Result > Who Am I ? :" 대괄호도 배열 인덱스의 값으로 보는듯..
 
       });
-         
-      // 
+
+      //
       // $('.open-popup-link').magnificPopup({
       //   type:'inline',
       //   midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
       // });
-      // 
+      //
       $('.popup2').magnificPopup({
         type:'inline',
         midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        alignTop: true,
+        overflowY: 'scroll', // as we know that popup content is tall we set scroll overflow by default to avoid jump
+        // fixedContentPos: false,
+        // autoFocusLast: false,
         callbacks: {
 
             open: function() {
-              $('.popup').magnificPopup({
+            $('.popup_window').find(".popup").magnificPopup({
                     type: 'ajax',
                     alignTop: true,
                     overflowY: 'scroll',
-  
+
                   })
             },
           }
-      });      
-      
+      });
+
       $('.popup').magnificPopup({
 
         // New issue (20201124): Returning to the previous position need to be improved.
@@ -136,7 +140,7 @@
           },
 
           ajaxContentAdded: function() {
-            
+
             // popup 인자 전달 테스트 시작
             // var myVar = "{{ page.tab_ref.ref1.product_group }}";
             // "{% assign passed_ref = page.tab_ref.ref1.model %}"
@@ -163,7 +167,7 @@
               console.log("passed_ref: " + '{{ passed_ref }}');
               console.log("passed_url: " + '{{ passed_url }}');
               console.log("Var_Temp3: "+ Var_Temp3);
-              
+
             },
             beforeClose: function() {
 
@@ -182,6 +186,8 @@
       $(function () {
         var currentHash = $(location).attr('hash');
         var filename = $(location).attr('href').split('/').reverse()[1];
+        console.log("currentHash: "+currentHash);
+        console.log("FileName: "+filename);
         $(document).scroll(function () {
           $('.header-link').each(function () {
             var top = window.pageYOffset;
@@ -251,13 +257,10 @@
     <script>
       function copyurl(item)
       {
-        // location.href = item.href;
         var copiedurl = decodeURI(item.href);
         var tempurl = $('<input>').val(copiedurl).appendTo('body').select();
         document.execCommand('copy');
         console.log(copiedurl);
-        // document.getElementById(id).href;
-        // document.execCommand('copy');
       }
     </script>
     <script>

@@ -2,7 +2,12 @@
 <div id=popup class="popup_window">
   <h1 id="goal-pwm">Goal PWM</h1>
 
-<p>When the [Operating Mode(11)] is <strong>PWM Control Mode</strong>, both the PID and Feedforward controllers will be deactivated as the Goal PWM(100) value directly controls a motor via an inverter. But on the other [Operating Mode(11)], the Goal PWM(100) limits PWM value only. Read <a href="#position-pid-gain80-82-84">Position PID Gain(80, 82, 84), Feedforward 1st/2nd Gains(88, 90)</a> or <a href="#velocity-pi-gain76-78">Velocity PI Gain(76, 78)</a> for how Goal PWM (100) works with the gains.</p>
+<ul>
+  <li>Passed Ref:</li>
+  <li>Passed Model:</li>
+</ul>
+
+<p>When the <a href="#operating-mode-" class="popup2">Operating Mode(11)</a> is <strong>PWM Control Mode</strong>, both the PID and Feedforward controllers will be deactivated as the Goal PWM(100) value directly controls a motor via an inverter. But on the other Operating Mode(11), the Goal PWM(100) limits PWM value only. Read <a href="#position-p-gain-" class="popup2">Position PID Gain(80, 82, 84), Feedforward 1st/2nd Gains(88, 90)</a> or <a href="#velocity-p-gain-" class="popup2">Velocity PI Gain(76, 78)</a> for how Goal PWM (100) works with the gains.</p>
 
 <table>
   <thead>
@@ -19,7 +24,7 @@
   </tbody>
 </table>
 
-<p class="notice"><strong>NOTE</strong>: Goal PWM(100) can not exceed [PWM Limit(36)].</p>
+<p class="notice"><strong>NOTE</strong>: Goal PWM(100) can not exceed <a href="#pwm-limit-" class="popup2">PWM Limit(36)</a>.</p>
 
 
 </div>
