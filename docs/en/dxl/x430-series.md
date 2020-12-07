@@ -1,7 +1,7 @@
 ---
 layout: archive
 lang: en
-ref: xl430-w250
+ref: x430-series
 tab_ref:
   ref1:
     model: xl430-w250
@@ -15,15 +15,15 @@ tab_ref:
 read_time: true
 share: true
 author_profile: false
-permalink: /docs/en/dxl/x/x430-series/test
+permalink: /docs/en/dxl/x/x430-series/
 tabs: "DYNAMIXEL"
 tab_title1: XL430-W250
 tab_title2: XC430-W150
 tab_title3: XH430-W210
 sidebar:
-title: XL430-W250-T
-nav: "xl430-w250-test"
-product_group: dxl_xl430
+  title: "X430 Series"
+  nav: "x430-series"
+product_group: x430-series
 ---
 
 {::options parse_block_html="true" /}
